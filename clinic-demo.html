@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>عيادة د. سلمى – طب وتجميل الأسنان</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #f3f8f7;
+            --surface: #fff;
+            --ink: #12302f;
+            --muted: #4e6968;
+            --brand: #0f766e;
+            --brand-ink: #fff;
+            --line: #d3e3e1;
+            --soft: #dff1ee;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+        
+        @media (prefers-color-scheme:dark) {
+             :root:not([data-theme="light"]) {
+                --bg: #0d1f1e;
+                --surface: #142b29;
+                --ink: #e6f4f2;
+                --muted: #9bb8b5;
+                --brand: #2dd4bf;
+                --brand-ink: #06201d;
+                --line: #24413e;
+                --soft: #193532
+            }
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0
+        }
+        
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px)
+        }
+        
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: Tajawal, Tahoma, Arial, sans-serif;
+            line-height: 1.7;
+            font-size: 17px
+        }
+        
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 20px 18px 90px
+        }
+        
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0 18px;
+            font-weight: 800
+        }
+        
+        .top a {
+            color: var(--brand);
+            text-decoration: none;
+            font-weight: 500
+        }
+        
+        .hero {
+            display: grid;
+            gap: 18px;
+            align-items: center
+        }
+        
+        @media(min-width:620px) {
+            .hero {
+                grid-template-columns: 1.3fr 1fr
+            }
+        }
+        
+        h1 {
+            font-size: clamp(30px, 8vw, 44px);
+            line-height: 1.25;
+            font-weight: 800
+        }
+        
+        .lead {
+            color: var(--muted);
+            margin: 12px 0 18px
+        }
+        
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px
+        }
+        
+        .badges span {
+            background: var(--soft);
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 14px
+        }
+        
+        .art {
+            background: var(--soft);
+            border-radius: 24px;
+            padding: 18px;
+            display: grid;
+            place-items: center
+        }
+        
+        .art svg {
+            width: min(190px, 60%);
+            height: auto
+        }
+        
+        .book,
+        .item,
+        .rev,
+        .doc,
+        .faq details {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px
+        }
+        
+        .book {
+            padding: 18px;
+            margin-top: 22px
+        }
+        
+        .book h2 {
+            font-size: 18px;
+            margin-bottom: 12px
+        }
+        
+        .days,
+        .svc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px
+        }
+        
+        .chip {
+            font: inherit;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink);
+            padding: 9px 15px;
+            border-radius: 999px;
+            cursor: pointer
+        }
+        
+        .chip[aria-pressed="true"] {
+            background: var(--brand);
+            color: var(--brand-ink);
+            border-color: var(--brand)
+        }
+        
+        .chip:focus-visible,
+        .cta:focus-visible,
+        input:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid var(--brand);
+            outline-offset: 2px
+        }
+        
+        .cta {
+            display: block;
+            text-align: center;
+            background: var(--brand);
+            color: var(--brand-ink);
+            font-weight: 800;
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none
+        }
+        
+        section {
+            margin-top: 44px
+        }
+        
+        h3 {
+            font-size: 22px;
+            margin-bottom: 6px
+        }
+        
+        .sub {
+            color: var(--muted);
+            margin-bottom: 14px
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 12px
+        }
+        
+        .item {
+            padding: 14px 16px
+        }
+        
+        .item b {
+            display: block
+        }
+        
+        .item span {
+            color: var(--muted);
+            font-size: 15px
+        }
+        
+        .price {
+            color: var(--brand)!important;
+            font-weight: 800
+        }
+        
+        .ba {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            aspect-ratio: 2/1;
+            background: #7a2e35;
+            direction: ltr
+        }
+        
+        .ba .l {
+            position: absolute;
+            inset: 0
+        }
+        
+        .ba svg {
+            width: 100%;
+            height: 100%;
+            display: block
+        }
+        
+        #after {
+            clip-path: inset(0 0 0 50%)
+        }
+        
+        .ba input {
+            position: absolute;
+            inset: auto 10px 10px 10px;
+            width: calc(100% - 20px);
+            accent-color: var(--brand)
+        }
+        
+        .tag {
+            position: absolute;
+            top: 10px;
+            background: rgba(0, 0, 0, .55);
+            color: #fff;
+            font-size: 13px;
+            padding: 2px 12px;
+            border-radius: 999px
+        }
+        
+        .steps {
+            display: grid;
+            gap: 12px;
+            counter-reset: s
+        }
+        
+        .step {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 16px
+        }
+        
+        .step::before {
+            counter-increment: s;
+            content: counter(s);
+            flex: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--brand);
+            color: var(--brand-ink);
+            display: grid;
+            place-items: center;
+            font-weight: 800
+        }
+        
+        .step b {
+            display: block
+        }
+        
+        .step span {
+            color: var(--muted);
+            font-size: 15px
+        }
+        
+        .doc {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 16px
+        }
+        
+        .doc svg {
+            flex: none;
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: var(--soft)
+        }
+        
+        .rev {
+            padding: 14px 16px
+        }
+        
+        .rev p {
+            margin-bottom: 6px
+        }
+        
+        .rev small {
+            color: var(--muted)
+        }
+        
+        .stars {
+            color: #d99a00;
+            letter-spacing: 2px
+        }
+        
+        .faq details {
+            padding: 12px 16px;
+            margin-bottom: 10px
+        }
+        
+        .faq summary {
+            cursor: pointer;
+            font-weight: 800
+        }
+        
+        .faq p {
+            color: var(--muted);
+            margin-top: 8px
+        }
+        
+        .info {
+            background: var(--soft);
+            border-radius: 14px;
+            padding: 16px 18px
+        }
+        
+        .fab {
+            position: fixed;
+            inset-inline-start: 16px;
+            bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+            background: #25d366;
+            color: #04230f;
+            font-weight: 800;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .25)
+        }
+        
+        @media (prefers-reduced-motion:no-preference) {
+            .art svg {
+                animation: fl 4s ease-in-out infinite
+            }
+            @keyframes fl {
+                50% {
+                    transform: translateY(-8px)
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="top"><span>عيادة د. سلمى</span><a href="tel:+201277596435">01277596435</a></div>
+
+        <div class="hero">
+            <div>
+                <div class="badges"><span>أخصائية تجميل وزراعة</span><span>+12 سنة خبرة</span></div>
+                <h1>ابتسامتك تستاهل دكتورة تسمعك وتشرحلك</h1>
+                <p class="lead">كشف وعلاج وتجميل أسنان في مدينة نصر. مواعيد منظمة بدون انتظار طويل، وسعر الكشف يتقال قبل ما تيجي.</p>
+            </div>
+            <div class="art" aria-hidden="true">
+                <svg viewBox="0 0 100 130"><path d="M50 16C30 4 6 18 12 48c4 22 9 30 12 54 2 16 11 16 14 2 3-13 6-22 12-22s9 9 12 22c3 14 12 14 14-2 3-24 8-32 12-54C94 18 70 4 50 16z" fill="#fff" stroke="#0f766e" stroke-width="4"/><path d="M28 34c4-6 12-8 18-6" stroke="#9fd8d1" stroke-width="5" stroke-linecap="round" fill="none"/></svg>
+            </div>
+        </div>
+
+        <div class="book">
+            <h2>احجز في 10 ثواني</h2>
+            <div class="svc" id="svc" role="group" aria-label="الخدمة"></div>
+            <div class="days" id="days" role="group" aria-label="اليوم"></div>
+            <a class="cta" id="go" href="#">ابعت طلب الحجز على واتساب</a>
+        </div>
+
+        <section>
+            <h3>قبل وبعد التبييض</h3>
+            <p class="sub">اسحب الشريط وشوف الفرق (توضيحي، وهنا بتحط صور حالات العيادة الحقيقية).</p>
+            <div class="ba">
+                <div class="l" id="before"></div>
+                <div class="l" id="after"></div>
+                <span class="tag" style="left:10px">بعد</span><span class="tag" style="right:10px">قبل</span>
+                <input type="range" id="rng" min="0" max="100" value="50" aria-label="قارن قبل وبعد">
+            </div>
+        </section>
+
+        <section>
+            <h3>الخدمات والأسعار</h3>
+            <div class="grid">
+                <div class="item"><b>كشف واستشارة</b><span class="price">300 جنيه</span></div>
+                <div class="item"><b>تنظيف وتلميع</b><span class="price">600 جنيه</span></div>
+                <div class="item"><b>حشو تجميلي</b><span class="price">من 800 جنيه</span></div>
+                <div class="item"><b>تبييض الأسنان</b><span class="price">من 2500 جنيه</span></div>
+                <div class="item"><b>تقويم شفاف</b><span class="price">بعد الكشف</span></div>
+                <div class="item"><b>زراعة الأسنان</b><span class="price">بعد الكشف</span></div>
+            </div>
+        </section>
+
+        <section>
+            <h3>إزاي بتمشي الجلسة</h3>
+            <div class="steps">
+                <div class="step">
+                    <div><b>كشف وأشعة</b><span>بنفحص الأسنان ونصور أشعة لو محتاجة.</span></div>
+                </div>
+                <div class="step">
+                    <div><b>شرح الخطة والسعر</b><span>تعرف العلاج المطلوب وتكلفته قبل ما نبدأ.</span></div>
+                </div>
+                <div class="step">
+                    <div><b>العلاج بتخدير موضعي</b><span>جلسة مريحة بأجهزة معقمة ومن غير ألم.</span></div>
+                </div>
+                <div class="step">
+                    <div><b>متابعة بعد الجلسة</b><span>بنطمن عليك على واتساب وبنحدد ميعاد المتابعة.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>الدكتورة</h3>
+            <div class="doc">
+                <svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="32" r="14" fill="#0f766e"/><path d="M14 80c2-20 14-28 28-28s26 8 28 28z" fill="#0f766e"/></svg>
+                <div><b>د. سلمى أحمد</b><br><span style="color:var(--muted)">استشاري طب وتجميل الأسنان، ماجستير جامعة القاهرة. (حط هنا صورة الدكتورة الحقيقية)</span></div>
+            </div>
+        </section>
+
+        <section>
+            <h3>آراء المرضى</h3>
+            <div class="grid">
+                <div class="rev">
+                    <div class="stars">★★★★★</div>
+                    <p>أول مرة أدخل عيادة أسنان من غير توتر. شرحت كل حاجة قبل ما تبدأ.</p><small>منى ع.</small></div>
+                <div class="rev">
+                    <div class="stars">★★★★★</div>
+                    <p>التبييض نتيجته حلوة ومواعيدهم دقيقة جدًا.</p><small>كريم ح.</small></div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h3>أسئلة بتتسأل كتير</h3>
+            <details>
+                <summary>هل الحشو بيوجع؟</summary>
+                <p>لا، بنستخدم تخدير موضعي وبتحس بضغط بسيط بس.</p>
+            </details>
+            <details>
+                <summary>الدفع إزاي؟</summary>
+                <p>كاش أو فيزا، وبنقسّم تكلفة العلاجات الكبيرة على جلسات.</p>
+            </details>
+            <details>
+                <summary>فيه حجز طوارئ؟</summary>
+                <p>أيوه، ابعت واتساب وبنرد في نفس اليوم.</p>
+            </details>
+        </section>
+
+        <section>
+            <h3>مواعيد العيادة</h3>
+            <div class="info">من السبت للخميس، 12 ظهرًا حتى 9 مساءً. الجمعة إجازة.<br>العنوان: شارع عباس العقاد، مدينة نصر، الدور الثالث.</div>
+        </section>
+    </main>
+
+    <a class="fab" id="fab" href="#">واتساب</a>
+
+    <script>
+        (function() {
+            var PHONE = "01277596435";
+            var services = ["كشف", "تنظيف", "حشو", "تبييض"];
+            var days = ["السبت", "الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس"];
+            var state = {
+                s: services[0],
+                d: days[0]
+            };
+
+            function chips(id, list, key) {
+                var box = document.getElementById(id);
+                list.forEach(function(t) {
+                    var b = document.createElement("button");
+                    b.type = "button";
+                    b.className = "chip";
+                    b.textContent = t;
+                    b.setAttribute("aria-pressed", t === state[key]);
+                    b.onclick = function() {
+                        state[key] = t;
+                        [].forEach.call(box.children, function(c) {
+                            c.setAttribute("aria-pressed", c === b)
+                        });
+                        update()
+                    };
+                    box.appendChild(b);
+                });
+            }
+
+            function link(m) {
+                return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(m)
+            }
+
+            function update() {
+                document.getElementById("go").href = link("أهلًا، عايز أحجز " + state.s + " يوم " + state.d + ".")
+            }
+            chips("svc", services, "s");
+            chips("days", days, "d");
+            update();
+            document.getElementById("fab").href = link("أهلًا، عايز أستفسر عن العيادة.");
+
+            function smile(fill, edge) {
+                var t = "";
+                for (var i = 0; i < 8; i++) {
+                    var x = 34 + i * 28,
+                        y = 34 + Math.abs(3.5 - i) * Math.abs(3.5 - i) * 2.6;
+                    t += '<rect x="' + x + '" y="' + y + '" width="26" height="' + (54 - Math.abs(3.5 - i) * 5) + '" rx="11" fill="' + fill + '" stroke="' + edge + '" stroke-width="1.5"/>';
+                }
+                return '<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice"><rect width="300" height="150" fill="#d98c8c"/><ellipse cx="150" cy="78" rx="128" ry="52" fill="#5e1f28"/>' + t + '</svg>';
+            }
+            document.getElementById("before").innerHTML = smile("#e4d08a", "#b9a24e");
+            document.getElementById("after").innerHTML = smile("#fbfdfc", "#d6e4e2");
+            var after = document.getElementById("after");
+            document.getElementById("rng").oninput = function() {
+                after.style.clipPath = "inset(0 0 0 " + this.value + "%)"
+            };
+        })();
+    </script>
+</body>
+
+</html>

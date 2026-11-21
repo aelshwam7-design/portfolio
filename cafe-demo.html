@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>بن وحكاية – المنيو</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff7ec;--ink:#000;--blue:#ff7a1a;--pink:#ff9a5c;--yellow:#ffc14d;--mint:#ffe0b8;--onblue:#000;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#15151a;--ink:#f6f5ef;--onblue:#000}}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:Rubik,Tahoma,Arial,sans-serif;line-height:1.55;font-size:16px;padding-bottom:130px}
+.hero{position:relative;overflow:hidden;background:var(--blue);color:var(--onblue);border-bottom:4px solid var(--ink);padding:20px 18px 34px}
+.hero .in,.sec .in{max-width:760px;margin:0 auto}
+.brand{display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:20px}
+.brand span:last-child{background:var(--yellow);color:#000;border:3px solid #000;padding:0 12px;font-size:13px;font-weight:800}
+.hero h1{font-weight:900;font-size:clamp(46px,14vw,104px);line-height:.95;margin:34px 0 14px}
+.hero p{max-width:24em;font-weight:500}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;background:var(--ink);overflow-x:auto;scrollbar-width:none}
+.nav a{flex:1 0 auto;text-align:center;padding:14px 18px;color:var(--paper);text-decoration:none;font-weight:800;border-inline-start:2px solid var(--paper)}
+.nav a:first-child{border:0}
+.nav a:focus-visible,.qb:focus-visible,.send:focus-visible,input:focus-visible{outline:4px solid var(--yellow);outline-offset:-4px}
+.sec{padding:0 18px 26px;border-bottom:4px solid var(--ink)}
+.sec h2{font-weight:900;font-size:clamp(34px,10vw,64px);line-height:1;padding:22px 0 14px}
+.row{display:grid;grid-template-columns:1fr auto auto;gap:10px 14px;align-items:center;padding:12px 8px;margin-inline:-8px;border-top:2px solid currentColor;transition:background .15s}
+.row b{font-size:18px;font-weight:800}
+.row small{display:block;font-weight:400;opacity:.75}
+.pic{width:100%;max-height:150px;object-fit:cover;border:3px solid var(--ink);margin-top:6px}
+.tag{display:inline-block;background:var(--ink);color:var(--paper);font-size:11px;font-weight:800;padding:0 8px;margin-inline-start:8px;vertical-align:middle}
+.price{font-weight:900;font-size:21px;border:3px solid currentColor;padding:0 10px;transform:rotate(-3deg);box-shadow:3px 3px 0 currentColor;white-space:nowrap}
+.price i{font-style:normal;font-size:12px;font-weight:500;margin-inline-start:3px}
+.q{display:flex;align-items:center;border:3px solid currentColor}
+.q span{min-width:30px;text-align:center;font-weight:800}
+.qb{width:38px;height:38px;border:0;background:var(--ink);color:var(--paper);font:inherit;font-weight:900;font-size:20px;cursor:pointer}
+.qb:active{transform:translate(1px,1px)}
+.info{padding:22px 18px;background:var(--yellow);color:#000;border-bottom:4px solid #000;font-weight:500}
+.info .in{max-width:760px;margin:0 auto}
+.bar{position:fixed;inset-inline:0;bottom:0;background:var(--paper);border-top:4px solid var(--ink);padding:10px 18px calc(10px + env(safe-area-inset-bottom,0px));transform:translateY(110%);transition:transform .2s}
+.bar.on{transform:none}
+.bar .in{max-width:760px;margin:0 auto;display:grid;gap:8px}
+.bar input{font:inherit;border:3px solid var(--ink);background:transparent;color:var(--ink);padding:8px 12px;width:100%}
+.line{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800}
+.send{font:inherit;font-weight:900;background:#000;color:#ffb347;border:3px solid var(--ink);padding:10px 18px;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+.send:active{box-shadow:0 0 0 var(--ink);transform:translate(4px,4px)}
+.row.on{background:rgba(255,255,255,.4)}
+.stk{position:absolute;inset-inline-end:14px;top:78px;width:100px;height:100px;border-radius:50%;background:var(--yellow);color:#000;border:4px solid #000;display:grid;place-items:center;text-align:center;font-weight:900;line-height:1.15;font-size:15px;transform:rotate(12deg);box-shadow:4px 4px 0 #000}
+.mq{direction:ltr;background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;font-weight:900;font-size:18px;padding:9px 0;border-bottom:4px solid var(--ink)}
+.mq div{display:inline-block;animation:mq 22s linear infinite}
+.mq span{padding:0 18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sec h2 small{font-size:15px;font-weight:800;margin-inline-start:12px;border:3px solid currentColor;padding:0 10px;vertical-align:middle}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}.mq div{animation:none}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="in">
+  <div class="brand"><span>بن وحكاية</span><span>مفتوح حتى 12</span></div>
+  <div class="stk" aria-hidden="true">قهوة<br>مختصة<br>طازة</div>
+  <h1>اطلب.<br>اشرب.<br>كرر.</h1>
+  <p>اختار من المنيو وابعت الطلب على واتساب. هيوصلك أو يكون جاهز على ترابيزتك.</p>
+</div></header>
+<div class="mq" aria-hidden="true"><div><span>قهوة مختصة ✦</span><span>حلويات طازة ✦</span><span>سندوتشات سخنة ✦</span><span>توصيل سريع ✦</span><span>قهوة مختصة ✦</span><span>حلويات طازة ✦</span><span>سندوتشات سخنة ✦</span><span>توصيل سريع ✦</span></div></div>
+<nav class="nav" id="nav" aria-label="أقسام المنيو"></nav>
+<main id="menu"></main>
+<div class="info"><div class="in"><b>العنوان:</b> شارع النصر، بجوار الصيدلية، طنطا.<br><b>التوصيل:</b> 20 جنيه داخل المنطقة. <b>الدفع:</b> كاش عند الاستلام.</div></div>
+
+<div class="bar" id="bar"><div class="in">
+  <input id="where" type="text" placeholder="رقم الترابيزة أو عنوان التوصيل" aria-label="رقم الترابيزة أو عنوان التوصيل">
+  <div class="line"><span id="sum"></span><button class="send" id="send" type="button">ابعت الطلب على واتساب</button></div>
+</div></div>
+
+<script>
+(function(){
+  var PHONE="201000000000";
+  // صور حقيقية للأصناف: PHOTOS.m1="img/m1.jpg" (أو data:image)
+  var PHOTOS={};
+  var M=[
+    {id:"m1",c:"قهوة",n:"إسبريسو",d:"شوت مركّز",p:45},
+    {id:"m2",c:"قهوة",n:"كابتشينو",d:"فوم كريمي",p:70,hot:1},
+    {id:"m3",c:"قهوة",n:"لاتيه فانيليا",d:"حليب وفانيليا",p:80},
+    {id:"m4",c:"قهوة",n:"قهوة تركي",d:"على الغلاية",p:50},
+    {id:"m5",c:"باردة",n:"آيس لاتيه",d:"قهوة وحليب وتلج",p:85,hot:1},
+    {id:"m6",c:"باردة",n:"موهيتو ليمون",d:"ليمون ونعناع",p:65},
+    {id:"m7",c:"باردة",n:"سموذي مانجو",d:"مانجو طازة",p:75},
+    {id:"m8",c:"حلويات",n:"تشيز كيك",d:"صوص توت",p:95,hot:1},
+    {id:"m9",c:"حلويات",n:"براونيز",d:"شوكولاتة بلجيكي",p:70},
+    {id:"m10",c:"حلويات",n:"وافل",d:"نوتيلا وفراولة",p:110},
+    {id:"m11",c:"سندوتشات",n:"كلوب ساندوتش",d:"فراخ وجبنة وخضار",p:120},
+    {id:"m12",c:"سندوتشات",n:"بانيني موتزاريلا",d:"طماطم وريحان",p:105}
+  ];
+  var COL={"قهوة":"var(--yellow)","باردة":"var(--mint)","حلويات":"var(--pink)","سندوتشات":"var(--blue)"};
+  var ONC={"قهوة":"#000","باردة":"#000","حلويات":"#000","سندوتشات":"#000"};
+  var cats=[],qty={};
+  M.forEach(function(x){if(cats.indexOf(x.c)<0)cats.push(x.c);qty[x.id]=0});
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+  var menu=document.getElementById("menu"),nav=document.getElementById("nav");
+  cats.forEach(function(c,i){
+    var a=el("a","",c);a.href="#s"+i;nav.appendChild(a);
+    var sec=el("section","sec");sec.id="s"+i;sec.style.background=COL[c];sec.style.color=ONC[c];
+    var inn=el("div","in");var h=el("h2","",c);h.appendChild(el("small","",M.filter(function(x){return x.c===c}).length+" أصناف"));inn.appendChild(h);
+    M.filter(function(x){return x.c===c}).forEach(function(x){
+      var r=el("div","row"),mid=el("div"),b=el("b","",x.n);
+      if(x.hot)b.appendChild(el("span","tag","الأكثر طلبًا"));
+      mid.appendChild(b);mid.appendChild(el("small","",x.d));
+      if(PHOTOS[x.id]){var im=el("img","pic");im.src=PHOTOS[x.id];im.alt=x.n;mid.appendChild(im)}
+      var pr=el("div","price",String(x.p));pr.appendChild(el("i","","جنيه"));
+      var q=el("div","q"),n=el("span","",0);
+      var minus=el("button","qb","−");minus.type="button";minus.setAttribute("aria-label","قلّل "+x.n);
+      var plus=el("button","qb","+");plus.type="button";plus.setAttribute("aria-label","زوّد "+x.n);
+      plus.onclick=function(){qty[x.id]++;n.textContent=qty[x.id];r.classList.add("on");tot()};
+      minus.onclick=function(){if(qty[x.id]>0){qty[x.id]--;n.textContent=qty[x.id];r.classList.toggle("on",qty[x.id]>0);tot()}};
+      q.appendChild(minus);q.appendChild(n);q.appendChild(plus);
+      r.appendChild(mid);r.appendChild(pr);r.appendChild(q);inn.appendChild(r);
+    });
+    sec.appendChild(inn);menu.appendChild(sec);
+  });
+  function tot(){
+    var c=0,s=0;M.forEach(function(x){c+=qty[x.id];s+=qty[x.id]*x.p});
+    document.getElementById("bar").classList.toggle("on",c>0);
+    document.getElementById("sum").textContent=c+" صنف | "+s+" جنيه";
+  }
+  document.getElementById("send").onclick=function(){
+    var m="أهلًا، عايز أطلب:\n",s=0;
+    M.forEach(function(x){if(qty[x.id]>0){m+="- "+x.n+" × "+qty[x.id]+"\n";s+=qty[x.id]*x.p}});
+    m+="\nالإجمالي: "+s+" جنيه";
+    var w=document.getElementById("where").value.trim();
+    if(w)m+="\nالترابيزة أو العنوان: "+w;
+    window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(m),"_blank");
+  };
+  tot();
+})();
+</script>
+</body>
+</html>

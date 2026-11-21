@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>جيم القوة – اشترك النهاردة</title>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#111;--red:#e10600;--red-ink:#fff;--soft:#f0f0f0;--muted:#555;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121212;--ink:#f5f5f5;--soft:#1f1f1f;--muted:#a8a8a8}}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Changa,Tahoma,Arial,sans-serif;line-height:1.6;font-size:17px}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+.hero{background:var(--red);color:var(--red-ink);clip-path:polygon(0 0,100% 0,100% 88%,0 100%);padding-bottom:70px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-weight:800;font-size:22px}
+.top a{background:#111;color:#fff;text-decoration:none;font-size:15px;padding:6px 18px;font-weight:600}
+.hero h1{font-weight:800;font-size:clamp(44px,13vw,100px);line-height:1;margin:18px 0 12px}
+.hero p{max-width:24em;font-weight:400}
+.cta{display:inline-block;margin-top:20px;background:#111;color:#fff;font:inherit;font-weight:800;padding:13px 28px;text-decoration:none;border:0;cursor:pointer}
+.cta:focus-visible,.seg button:focus-visible,.day:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+section{margin-top:44px}
+h2{font-weight:800;font-size:clamp(30px,8vw,48px);line-height:1.05;margin-bottom:12px;border-inline-start:10px solid var(--red);padding-inline-start:12px}
+.seg{display:flex;border:3px solid var(--ink);width:max-content;max-width:100%;margin-bottom:16px}
+.seg button{font:inherit;font-weight:600;background:transparent;color:var(--ink);border:0;padding:8px 16px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.plan{background:var(--soft);padding:18px;display:flex;flex-direction:column;gap:6px;position:relative}
+.plan.hot{border:4px solid var(--red)}
+.plan.hot::before{content:"الأكثر اشتراكًا";position:absolute;top:-14px;inset-inline-start:14px;background:var(--red);color:var(--red-ink);font-size:13px;font-weight:800;padding:0 12px}
+.plan h3{font-size:24px}
+.pm{font-size:38px;font-weight:800;line-height:1}
+.pm small{font-size:15px;font-weight:400}
+.tot{color:var(--muted);font-size:14px}
+.plan ul{list-style:none;margin:8px 0;font-size:15px}
+.plan li{padding:2px 0}
+.plan li::before{content:"+ ";color:var(--red);font-weight:800}
+.sub{margin-top:auto;text-align:center;background:var(--ink);color:var(--bg);font-weight:800;padding:10px;text-decoration:none}
+.days{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;scrollbar-width:none}
+.day{flex:none;font:inherit;font-weight:600;border:3px solid var(--ink);background:transparent;color:var(--ink);padding:5px 16px;cursor:pointer}
+.day[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:var(--red-ink)}
+.cl{display:grid;grid-template-columns:78px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:2px solid var(--ink)}
+.cl b{font-size:18px}.cl span{color:var(--muted);font-size:15px}
+.cl time{font-weight:800;font-size:20px;color:var(--red)}
+.lv{font-size:13px;font-weight:600;border:2px solid var(--ink);padding:0 10px}
+.tr{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.tr div{background:var(--soft);padding:16px;text-align:center}
+.av{width:72px;height:72px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:30px;font-weight:800;margin:0 auto 6px}
+.tr span{color:var(--muted);font-size:15px}
+footer{margin-top:50px;background:var(--ink);color:var(--bg);padding:26px 0 90px}
+.fab{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#04230f;font-weight:800;padding:10px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="top"><span>جيم القوة</span><a href="#plans">اشترك</a></div>
+  <h1>مش من السبت.<br>من النهاردة.</h1>
+  <p>أجهزة حديثة، ومدربين بيتابعوك بنفسهم، وحصص جماعية كل يوم. أول حصة تجريبية مجانًا.</p>
+  <a class="cta" id="trial" href="#">احجز حصتك المجانية</a>
+</div></header>
+
+<main class="wrap">
+  <section id="plans" style="margin-top:20px">
+    <h2>الاشتراكات</h2>
+    <div class="seg" id="seg" role="group" aria-label="مدة الاشتراك"></div>
+    <div class="plans" id="plans-box"></div>
+  </section>
+  <section>
+    <h2>جدول الحصص</h2>
+    <div class="days" id="days" role="group" aria-label="اليوم"></div>
+    <div id="cls" aria-live="polite"></div>
+  </section>
+  <section>
+    <h2>المدربين</h2>
+    <div class="tr">
+      <div><div class="av">ك</div><b>كابتن كريم</b><br><span>بناء عضلات وقوة</span></div>
+      <div><div class="av">ن</div><b>كابتن نورهان</b><br><span>لياقة وتخسيس (سيدات)</span></div>
+      <div><div class="av">ع</div><b>كابتن عمرو</b><br><span>كروس فيت وملاكمة</span></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><b style="font-size:22px">جيم القوة</b><br>شارع الحرية، فوق مطعم الأصيل، الدور الأول، الإسكندرية.<br>مفتوح يوميًا من 7 صباحًا حتى 12 بالليل، والجمعة من 2 ظهرًا.</div></footer>
+<a class="fab" id="fab" href="#">واتساب</a>
+
+<script>
+(function(){
+  var PHONE="201000000000";
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m)}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+  var D=[{l:"شهر",m:1,k:1},{l:"3 شهور",m:3,k:0.9},{l:"سنة",m:12,k:0.75}],di=0;
+  var P=[
+    {n:"أساسي",p:350,f:["كل الأجهزة","اختبار لياقة أولي","دولاب خاص"]},
+    {n:"بلس",p:550,hot:1,f:["كل الأجهزة + الحصص الجماعية","خطة تمرين مكتوبة","متابعة شهرية مع المدرب"]},
+    {n:"VIP",p:900,f:["كل مميزات بلس","6 جلسات تدريب خاص شهريًا","خطة تغذية","ساونا"]}
+  ];
+  var seg=document.getElementById("seg"),box=document.getElementById("plans-box");
+  function plans(){
+    box.innerHTML="";
+    P.forEach(function(x){
+      var d=D[di],mo=Math.round(x.p*d.k),tot=mo*d.m;
+      var c=el("div","plan"+(x.hot?" hot":""));
+      c.appendChild(el("h3","",x.n));
+      var pm=el("div","pm",String(mo));pm.appendChild(el("small","",d.m>1?" جنيه / شهر":" جنيه"));c.appendChild(pm);
+      c.appendChild(el("div","tot",d.m>1?"الإجمالي "+tot+" جنيه لمدة "+d.l:"اشتراك شهري"));
+      var ul=el("ul");x.f.forEach(function(f){ul.appendChild(el("li","",f))});c.appendChild(ul);
+      var a=el("a","sub","اشترك في "+x.n);a.href=wa("أهلًا، عايز أشترك في باقة "+x.n+" لمدة "+d.l+" ("+tot+" جنيه).");
+      c.appendChild(a);box.appendChild(c);
+    });
+  }
+  D.forEach(function(d,i){var b=el("button","",d.l);b.type="button";b.setAttribute("aria-pressed",i===di);
+    b.onclick=function(){di=i;[].forEach.call(seg.children,function(k){k.setAttribute("aria-pressed",k===b)});plans()};seg.appendChild(b)});
+  plans();
+
+  var S={"السبت":[["7:00 ص","كروس فيت","ك. عمرو","متوسط"],["6:00 م","زومبا","ك. نورهان","مبتدئ"],["8:00 م","تقوية عضلات","ك. كريم","متقدم"]],
+    "الأحد":[["6:00 م","كارديو وحرق","ك. نورهان","مبتدئ"],["8:00 م","ملاكمة","ك. عمرو","متوسط"]],
+    "الاثنين":[["7:00 ص","يوجا","ك. نورهان","مبتدئ"],["7:00 م","كروس فيت","ك. عمرو","متوسط"],["9:00 م","تقوية عضلات","ك. كريم","متقدم"]],
+    "الثلاثاء":[["6:00 م","زومبا","ك. نورهان","مبتدئ"],["8:00 م","ملاكمة","ك. عمرو","متوسط"]],
+    "الأربعاء":[["7:00 ص","كروس فيت","ك. عمرو","متوسط"],["8:00 م","تقوية عضلات","ك. كريم","متقدم"]],
+    "الخميس":[["5:00 م","كارديو وحرق","ك. نورهان","مبتدئ"],["7:00 م","حصة مفتوحة","ك. كريم","كل المستويات"]]};
+  var days=Object.keys(S),cd=days[0],db=document.getElementById("days"),cl=document.getElementById("cls");
+  function cls(){cl.innerHTML="";S[cd].forEach(function(r){
+    var row=el("div","cl");row.appendChild(el("time","",r[0]));
+    var m=el("div");m.appendChild(el("b","",r[1]));m.appendChild(el("br"));m.appendChild(el("span","","مع "+r[2]));row.appendChild(m);
+    row.appendChild(el("span","lv",r[3]));cl.appendChild(row)})}
+  days.forEach(function(d){var b=el("button","day",d);b.type="button";b.setAttribute("aria-pressed",d===cd);
+    b.onclick=function(){cd=d;[].forEach.call(db.children,function(k){k.setAttribute("aria-pressed",k===b)});cls()};db.appendChild(b)});
+  cls();
+  document.getElementById("trial").href=wa("أهلًا، عايز أحجز الحصة التجريبية المجانية.");
+  document.getElementById("fab").href=wa("أهلًا، عايز أستفسر عن الاشتراكات.");
+})();
+</script>
+</body>
+</html>

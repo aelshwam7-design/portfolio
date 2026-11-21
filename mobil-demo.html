@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>موبايل زون – موبايلات وإكسسوارات</title>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f5f7;--surface:#fff;--ink:#1d1d1f;--muted:#6e6e73;--accent:#0071e3;--line:#e2e2e7;--btn:#1d1d1f;--btn-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--surface:#161618;--ink:#f5f5f7;--muted:#a1a1a6;--accent:#4aa3ff;--line:#2c2c2e;--btn:#f5f5f7;--btn-ink:#000}}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Readex Pro",Tahoma,Arial,sans-serif;line-height:1.7;font-size:16px;font-weight:300}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-weight:600}
+nav a{color:var(--accent);text-decoration:none;font-weight:400;font-size:15px}
+.hero{text-align:center;padding:38px 0 26px}
+.hero h1{font-weight:600;font-size:clamp(34px,9vw,72px);line-height:1.15;letter-spacing:-.5px}
+.hero p{color:var(--muted);margin:12px auto 0;max-width:28em;font-size:18px}
+.tabs{display:flex;justify-content:center;gap:6px;margin:6px 0 24px}
+.tab{font:inherit;font-weight:400;border:0;background:transparent;color:var(--muted);padding:6px 18px;border-radius:999px;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.tab:focus-visible,.o:focus-visible,.dot:focus-visible,.buy:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.phones{display:grid;gap:16px}
+@media(min-width:720px){.phones{grid-template-columns:1fr 1fr}}
+.ph{background:var(--surface);border-radius:30px;padding:26px 22px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.ph .tg{color:var(--accent);font-weight:600;font-size:14px}
+.ph h3{font-size:26px;font-weight:600;line-height:1.3}
+.ph .sp{color:var(--muted);font-size:14px;margin:2px 0 14px}
+.ph svg{width:120px;height:auto;margin:6px 0 12px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.25))}
+.dots{display:flex;gap:10px;margin-bottom:12px}
+.dot{width:26px;height:26px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line);cursor:pointer}
+.dot[aria-pressed="true"]{box-shadow:0 0 0 2px var(--accent)}
+.opts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
+.o{font:inherit;font-size:14px;border:1px solid var(--line);background:transparent;color:var(--ink);padding:3px 14px;border-radius:12px;cursor:pointer}
+.o[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.pr{font-size:28px;font-weight:600}
+.pr small{font-size:14px;font-weight:300;color:var(--muted)}
+.ins{color:var(--muted);font-size:13px;margin-bottom:14px}
+.buy{display:inline-block;background:var(--btn);color:var(--btn-ink);font:inherit;font-weight:600;padding:11px 30px;border-radius:999px;text-decoration:none;margin-top:auto}
+h2{font-weight:600;font-size:30px;margin:44px 0 14px}
+.acc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+@media(max-width:440px){.acc{grid-template-columns:1fr 1fr}}
+.a{background:var(--surface);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:2px}
+.a .e{font-size:42px;line-height:1.2}
+.a b{font-weight:600;font-size:15px;line-height:1.4}
+.a .pr{font-size:19px;margin:4px 0 8px}
+.a .buy{padding:8px 16px;font-size:14px;text-align:center}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:44px 0 0}
+.perks div{padding:14px 16px;border-top:1px solid var(--ink);font-weight:600}
+.perks span{display:block;font-weight:300;color:var(--muted);font-size:14px}
+footer{margin-top:44px;padding:24px 0 90px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.fab{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#04230f;font-weight:600;padding:10px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><span>موبايل زون</span><a href="tel:+201000000000">اتصل بنا</a></nav>
+  <div class="hero">
+    <h1>أحدث الموبايلات.<br>أحسن إكسسوارات.</h1>
+    <p>أجهزة جديدة بضمان، وإكسسوارات أصلية. اختار اللون والسعة، واطلب على واتساب.</p>
+  </div>
+  <div class="tabs" id="tabs" role="group" aria-label="القسم"></div>
+  <div id="pwrap"><div class="phones" id="phones"></div></div>
+  <div id="awrap"><h2>الإكسسوارات</h2><div class="acc" id="acc"></div></div>
+
+  <div class="perks">
+    <div>ضمان على كل الأجهزة<span>بفاتورة رسمية</span></div>
+    <div>فحص قبل الدفع<span>افتح الجهاز واتأكد</span></div>
+    <div>توصيل لكل المحافظات<span>2 إلى 4 أيام عمل</span></div>
+  </div>
+</div>
+<footer><div class="wrap">موبايل زون | شارع الجيش، بجوار البنك الأهلي، المنصورة. من 11 صباحًا حتى 11 مساءً.</div></footer>
+<a class="fab" id="fab" href="#">واتساب</a>
+
+<script>
+(function(){
+  var PHONE="201000000000";
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m)}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+  function fmt(n){return n.toLocaleString("en-US")}
+  var PH=[
+    {n:"نوفا 12 برو",tg:"الأحدث",sp:"شاشة 6.7 بوصة | كاميرا 200 ميجا | بطارية 5000",b:21999,o:[["128 جيجا",0],["256 جيجا",2000],["512 جيجا",5000]],c:[["أسود","#1c1c1e"],["أزرق","#3b5b8c"],["تيتانيوم","#bdb6aa"]]},
+    {n:"أورا X5 5G",tg:"الأكثر مبيعًا",sp:"شاشة 6.5 بوصة | شحن سريع 67 وات",b:14999,o:[["128 جيجا",0],["256 جيجا",1800]],c:[["أخضر","#4f7f68"],["أسود","#222"],["بنفسجي","#7b6bb3"]]},
+    {n:"فيجن Lite",tg:"اقتصادي",sp:"شاشة 6.6 بوصة | بطارية 5000",b:7499,o:[["64 جيجا",0],["128 جيجا",900]],c:[["رمادي","#555a63"],["أزرق فاتح","#6aa7d8"]]}
+  ];
+  var AC=[
+    {n:"غطاء حماية سيليكون",p:150,e:"📱"},{n:"واقي شاشة زجاج",p:90,e:"🛡️"},
+    {n:"شاحن سريع 33 وات",p:350,e:"🔌"},{n:"كابل Type-C مجدول",p:120,e:"🔗"},
+    {n:"سماعة بلوتوث لاسلكية",p:650,e:"🎧"},{n:"باور بانك 20000",p:890,e:"🔋"}
+  ];
+  function phoneSvg(col){return '<svg viewBox="0 0 100 200" aria-hidden="true"><rect x="8" y="4" width="84" height="192" rx="18" fill="'+col+'"/><rect x="8" y="4" width="84" height="192" rx="18" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/><rect x="16" y="12" width="40" height="44" rx="11" fill="rgba(0,0,0,.35)"/><circle cx="29" cy="25" r="7" fill="#0b0b0e" stroke="#555" stroke-width="2"/><circle cx="45" cy="25" r="7" fill="#0b0b0e" stroke="#555" stroke-width="2"/><circle cx="37" cy="42" r="7" fill="#0b0b0e" stroke="#555" stroke-width="2"/><circle cx="68" cy="22" r="3" fill="rgba(255,255,255,.6)"/></svg>'}
+  var ph=document.getElementById("phones");
+  PH.forEach(function(x){
+    var s={c:0,o:0},card=el("div","ph");
+    card.appendChild(el("div","tg",x.tg));card.appendChild(el("h3","",x.n));card.appendChild(el("div","sp",x.sp));
+    var vis=el("div");vis.innerHTML=phoneSvg(x.c[0][1]);card.appendChild(vis);
+    var dots=el("div","dots");dots.setAttribute("role","group");dots.setAttribute("aria-label","اللون");
+    x.c.forEach(function(c,i){var d=el("button","dot");d.type="button";d.style.background=c[1];d.setAttribute("aria-label",c[0]);d.setAttribute("aria-pressed",i===0);
+      d.onclick=function(){s.c=i;vis.innerHTML=phoneSvg(c[1]);[].forEach.call(dots.children,function(k){k.setAttribute("aria-pressed",k===d)});upd()};dots.appendChild(d)});
+    card.appendChild(dots);
+    var opts=el("div","opts");opts.setAttribute("role","group");opts.setAttribute("aria-label","السعة");
+    x.o.forEach(function(o,i){var b=el("button","o",o[0]);b.type="button";b.setAttribute("aria-pressed",i===0);
+      b.onclick=function(){s.o=i;[].forEach.call(opts.children,function(k){k.setAttribute("aria-pressed",k===b)});upd()};opts.appendChild(b)});
+    card.appendChild(opts);
+    var pr=el("div","pr"),ins=el("div","ins"),buy=el("a","buy","اطلب على واتساب");
+    card.appendChild(pr);card.appendChild(ins);card.appendChild(buy);
+    function upd(){var p=x.b+x.o[s.o][1];pr.textContent=fmt(p)+" ";pr.appendChild(el("small","","جنيه"));
+      ins.textContent="أو قسّط على 12 شهر بحوالي "+fmt(Math.round(p/12))+" جنيه شهريًا (الشروط حسب جهة التقسيط)";
+      buy.href=wa("أهلًا، عايز أطلب: "+x.n+" - "+x.o[s.o][0]+" - لون "+x.c[s.c][0]+" - السعر "+fmt(p)+" جنيه.")}
+    upd();ph.appendChild(card);
+  });
+  var ac=document.getElementById("acc");
+  AC.forEach(function(x){var a=el("div","a");a.appendChild(el("div","e",x.e));a.appendChild(el("b","",x.n));
+    var p=el("div","pr",fmt(x.p)+" ");p.appendChild(el("small","","جنيه"));a.appendChild(p);
+    var b=el("a","buy","اطلب");b.href=wa("أهلًا، عايز أطلب: "+x.n+" - "+x.p+" جنيه.");a.appendChild(b);ac.appendChild(a)});
+  var tabs=["الكل","موبايلات","إكسسوارات"],cur="الكل",tb=document.getElementById("tabs");
+  function show(){document.getElementById("pwrap").hidden=cur==="إكسسوارات";document.getElementById("awrap").hidden=cur==="موبايلات"}
+  tabs.forEach(function(t){var b=el("button","tab",t);b.type="button";b.setAttribute("aria-pressed",t===cur);
+    b.onclick=function(){cur=t;[].forEach.call(tb.children,function(k){k.setAttribute("aria-pressed",k===b)});show()};tb.appendChild(b)});
+  document.getElementById("fab").href=wa("أهلًا، عايز أستفسر عن موبايل.");
+})();
+</script>
+</body>
+</html>

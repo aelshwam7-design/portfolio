@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ستايل بوكس – ملابس عصرية</title>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efeaf9;--surface:#fff;--ink:#2a1740;--muted:#6a5a85;--accent:#ff5a4e;--accent-ink:#fff;--line:#dcd3ee;--panel:#e3dbf5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1030;--surface:#251845;--ink:#f1eaff;--muted:#b3a3d6;--accent:#ff7468;--accent-ink:#2a0a07;--line:#3a2a63;--panel:#31225a}}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Tajawal,Tahoma,Arial,sans-serif;line-height:1.6;font-size:16px}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-family:"Reem Kufi",Tajawal,sans-serif;font-weight:700;font-size:26px;letter-spacing:.5px}
+.top a{color:var(--ink);font-weight:800;text-decoration:none;border:2px solid var(--ink);padding:5px 16px;border-radius:999px;font-size:15px}
+.hero{display:grid;gap:18px;align-items:center;padding:14px 0 30px}
+@media(min-width:700px){.hero{grid-template-columns:1.2fr 1fr}}
+.hero h1{font-family:"Reem Kufi",Tajawal,sans-serif;font-weight:700;font-size:clamp(38px,10vw,66px);line-height:1.15}
+.hero p{color:var(--muted);margin:10px 0 18px;max-width:26em}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:800;padding:12px 24px;border-radius:12px;text-decoration:none;border:0;cursor:pointer}
+.btn:focus-visible,.chip:focus-visible,.sw:focus-visible,.sz:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.stage{background:var(--panel);border-radius:28px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px;transform:rotate(-2deg)}
+.stage svg{width:100%;height:auto}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none}
+.chip{flex:none;font:inherit;font-weight:700;border:2px solid var(--ink);background:transparent;color:var(--ink);padding:7px 18px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+@media(max-width:480px){.grid{grid-template-columns:1fr 1fr;gap:10px}}
+.card{background:var(--surface);border-radius:20px;padding:12px;display:flex;flex-direction:column}
+.pic{background:var(--panel);border-radius:14px;aspect-ratio:4/5;display:grid;place-items:center;overflow:hidden;position:relative}
+.pic svg{width:72%;height:auto;transition:fill .2s}
+.pic img{width:100%;height:100%;object-fit:cover}
+.new{position:absolute;top:8px;inset-inline-start:8px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:800;padding:1px 10px;border-radius:999px}
+.card h3{font-size:16px;margin:10px 0 0}
+.price{font-weight:800;font-size:18px}
+.old{color:var(--muted);text-decoration:line-through;font-size:14px;font-weight:400;margin-inline-start:6px}
+.row{display:flex;gap:6px;margin:8px 0;flex-wrap:wrap}
+.sw{width:26px;height:26px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line);cursor:pointer}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink)}
+.sz{font:inherit;font-size:13px;font-weight:700;min-width:34px;padding:2px 8px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.sz[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.order{margin-top:auto;text-align:center;background:var(--ink);color:var(--surface);font-weight:800;padding:10px;border-radius:10px;text-decoration:none;font-size:15px}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:40px}
+.perks div{border:2px solid var(--ink);border-radius:16px;padding:12px 16px;font-weight:800}
+.perks span{display:block;color:var(--muted);font-weight:400;font-size:14px}
+h2{font-family:"Reem Kufi",Tajawal,sans-serif;font-size:30px;margin:34px 0 10px}
+footer{margin-top:44px;background:var(--ink);color:var(--bg);padding:24px 0 90px}
+footer a{color:var(--bg)}
+.fab{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#04230f;font-weight:800;padding:12px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span class="logo">ستايل بوكس</span><a href="#shop">تسوّق</a></div>
+  <div class="hero">
+    <div>
+      <h1>لبس يطلع معاك من الصبح للسهر</h1>
+      <p>تيشيرتات وهوديز وفساتين وبناطيل بخامات مريحة. اختار اللون والمقاس، واطلب على واتساب في دقيقة.</p>
+      <a class="btn" href="#shop">شوف الكوليكشن</a>
+    </div>
+    <div class="stage" aria-hidden="true" id="stage"></div>
+  </div>
+
+  <h2 id="shop">الكوليكشن</h2>
+  <div class="chips" id="chips" role="group" aria-label="القسم"></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="perks">
+    <div>توصيل لكل المحافظات<span>2 إلى 4 أيام عمل</span></div>
+    <div>استبدال خلال 7 أيام<span>لو المقاس مش مظبوط</span></div>
+    <div>الدفع عند الاستلام<span>افتح الأوردر واتأكد</span></div>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <div class="logo">ستايل بوكس</div>
+  <p>الطلبات والاستفسارات على واتساب، من 11 صباحًا حتى 11 مساءً.<br>انستجرام: @stylebox.eg</p>
+</div></footer>
+<a class="fab" id="fab" href="#">واتساب</a>
+
+<script>
+(function(){
+  var PHONE="201000000000";
+  // لو عندك صورة حقيقية للمنتج: حط رابطها أو data:image في PHOTOS مثلًا PHOTOS.p1="data:image/jpeg;base64,..."
+  var PHOTOS={};
+  var SHAPES={
+    tee:'<path d="M30 10 18 16 6 28l10 12 10-6v58h48V34l10 6 10-12L82 16 70 10Q50 26 30 10Z"/>',
+    hood:'<path d="M32 14 6 34l6 36 14-4v26h48V66l14 4 6-36L68 14Q50 34 32 14Z"/><path d="M36 16Q50 40 64 16" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="2"/><rect x="36" y="66" width="28" height="12" rx="3" fill="rgba(0,0,0,.12)"/>',
+    dress:'<path d="M38 6h24l-3 30 22 60H19l22-60Z"/><path d="M40 36h20" stroke="rgba(0,0,0,.25)" stroke-width="2"/>',
+    pants:'<path d="M28 6h44l4 90H54L50 40 46 96H24Z"/><path d="M28 14h44" stroke="rgba(0,0,0,.25)" stroke-width="2"/>'
+  };
+  var P=[
+    {id:"p1",c:"تيشيرتات",n:"تيشيرت أوفر سايز قطن",p:299,o:360,sh:"tee",cols:["#2a1740","#ff5a4e","#f2e9d0","#4c8c6b"],sz:["S","M","L","XL"],nw:1},
+    {id:"p2",c:"تيشيرتات",n:"تيشيرت بولو كلاسيك",p:340,sh:"tee",cols:["#3c5da8","#e8e8e8","#222"],sz:["M","L","XL"]},
+    {id:"p3",c:"هوديز",n:"هودي فليس شتوي",p:690,o:780,sh:"hood",cols:["#6b5b95","#222","#c97b5c","#8aa8a1"],sz:["M","L","XL","XXL"],nw:1},
+    {id:"p4",c:"هوديز",n:"هودي زيب خفيف",p:620,sh:"hood",cols:["#444","#9b2c3a","#e0d8c8"],sz:["S","M","L"]},
+    {id:"p5",c:"فساتين",n:"فستان ميدي كاجوال",p:790,o:890,sh:"dress",cols:["#b5446e","#2a1740","#4c8c6b","#e2a23b"],sz:["S","M","L"],nw:1},
+    {id:"p6",c:"فساتين",n:"فستان سهرة ناعم",p:1150,sh:"dress",cols:["#1d3557","#7a1f3d","#222"],sz:["S","M","L"]},
+    {id:"p7",c:"بناطيل",n:"بنطلون جينز واسع",p:540,o:620,sh:"pants",cols:["#4a6fa5","#1c2a44","#8f8f8f"],sz:["30","32","34","36"]},
+    {id:"p8",c:"بناطيل",n:"بنطلون كارجو",p:580,sh:"pants",cols:["#6e6a4f","#222","#c2b49a"],sz:["30","32","34","36"]}
+  ];
+  var cats=["الكل","تيشيرتات","هوديز","فساتين","بناطيل"],cur="الكل",st={};
+  P.forEach(function(x){st[x.id]={c:x.cols[0],s:x.sz[0]}});
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m)}
+  function svg(sh,col){return '<svg viewBox="0 0 100 100" fill="'+col+'" stroke="rgba(0,0,0,.25)" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">'+SHAPES[sh]+'</svg>'}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+
+  var stage=document.getElementById("stage");
+  [["tee","#ff5a4e"],["dress","#2a1740"],["hood","#6b5b95"],["pants","#4a6fa5"]].forEach(function(a){var d=document.createElement("div");d.innerHTML=svg(a[0],a[1]);stage.appendChild(d)});
+
+  function render(){
+    var g=document.getElementById("grid");g.innerHTML="";
+    P.filter(function(x){return cur==="الكل"||x.c===cur}).forEach(function(x){
+      var card=el("div","card"),pic=el("div","pic");
+      if(PHOTOS[x.id]){var im=document.createElement("img");im.src=PHOTOS[x.id];im.alt=x.n;pic.appendChild(im)}
+      else{pic.innerHTML=svg(x.sh,st[x.id].c)}
+      if(x.nw)pic.appendChild(el("span","new","جديد"));
+      card.appendChild(pic);card.appendChild(el("h3","",x.n));
+      var pr=el("div","price",x.p+" جنيه");if(x.o)pr.appendChild(el("span","old",x.o));card.appendChild(pr);
+      var r1=el("div","row");r1.setAttribute("role","group");r1.setAttribute("aria-label","اللون");
+      x.cols.forEach(function(c){var b=el("button","sw");b.type="button";b.style.background=c;b.setAttribute("aria-label","لون");b.setAttribute("aria-pressed",c===st[x.id].c);
+        b.onclick=function(){st[x.id].c=c;[].forEach.call(r1.children,function(k){k.setAttribute("aria-pressed",k===b)});var s=pic.querySelector("svg");if(s)s.setAttribute("fill",c);upd()};r1.appendChild(b)});
+      var r2=el("div","row");r2.setAttribute("role","group");r2.setAttribute("aria-label","المقاس");
+      x.sz.forEach(function(s){var b=el("button","sz",s);b.type="button";b.setAttribute("aria-pressed",s===st[x.id].s);
+        b.onclick=function(){st[x.id].s=s;[].forEach.call(r2.children,function(k){k.setAttribute("aria-pressed",k===b)});upd()};r2.appendChild(b)});
+      var a=el("a","order","اطلب على واتساب");
+      function upd(){a.href=wa("أهلًا، عايز أطلب: "+x.n+" - مقاس "+st[x.id].s+" - لون كود "+st[x.id].c+" - السعر "+x.p+" جنيه")}
+      upd();card.appendChild(r1);card.appendChild(r2);card.appendChild(a);g.appendChild(card);
+    });
+  }
+  var chips=document.getElementById("chips");
+  cats.forEach(function(c){var b=el("button","chip",c);b.type="button";b.setAttribute("aria-pressed",c===cur);
+    b.onclick=function(){cur=c;[].forEach.call(chips.children,function(k){k.setAttribute("aria-pressed",k===b)});render()};chips.appendChild(b)});
+  render();
+  document.getElementById("fab").href=wa("أهلًا، عايز أستفسر عن الكوليكشن.");
+})();
+</script>
+</body>
+</html>

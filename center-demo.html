@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سنتر النخبة التعليمي – مجموعات الثانوية العامة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5fb;--surface:#fff;--ink:#14213d;--muted:#55627f;--navy:#14213d;--navy-ink:#fff;--gold:#f5a524;--gold-ink:#2b1c00;--line:#d9e0ef;--soft:#e4eaf8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1526;--surface:#16203a;--ink:#eaf0ff;--muted:#9fb0d4;--navy:#1d2b4f;--navy-ink:#fff;--line:#27365e;--soft:#1c2a4d}}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,Arial,sans-serif;line-height:1.7;font-size:17px}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px}
+header{background:var(--navy);color:var(--navy-ink)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 0;font-weight:800}
+.top a{color:var(--gold);text-decoration:none;font-weight:600}
+.hero{padding:26px 0 46px}
+.hero h1{font-size:clamp(30px,8vw,48px);line-height:1.25;font-weight:800;max-width:13em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{color:#c9d4ee;margin:14px 0 22px;max-width:30em}
+.btn{display:inline-block;background:var(--gold);color:var(--gold-ink);font:inherit;font-weight:800;padding:13px 24px;border-radius:12px;text-decoration:none;border:0;cursor:pointer}
+.btn.alt{background:transparent;color:var(--navy-ink);border:2px solid rgba(255,255,255,.4);margin-inline-start:8px}
+.btn:focus-visible,.chip:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+section{margin-top:46px}
+h2{font-size:26px;font-weight:800;margin-bottom:4px}
+.sub{color:var(--muted);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{font:inherit;font-weight:600;border:2px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 18px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--navy);color:var(--navy-ink);border-color:var(--navy)}
+.groups{display:grid;gap:12px}
+.g{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-right:6px solid var(--gold);border-radius:14px;padding:14px 16px}
+.g b{font-size:19px}
+.g .meta{color:var(--muted);font-size:15px}
+.g .price{font-weight:800;font-size:18px}
+.g .reg{grid-row:span 2;grid-column:2;background:var(--navy);color:var(--navy-ink);text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px;text-align:center}
+.g .full{color:#b4231c;font-weight:700;font-size:14px}
+.teachers{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.t{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.t svg{width:64px;height:64px;border-radius:50%;background:var(--soft);margin-bottom:6px}
+.t b{display:block}.t span{color:var(--muted);font-size:15px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.why div{background:var(--soft);border-radius:14px;padding:14px 16px}
+.why b{display:block}.why span{color:var(--muted);font-size:15px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:800}
+details p{color:var(--muted);margin-top:8px}
+footer{margin-top:50px;background:var(--navy);color:var(--navy-ink);padding:26px 0 90px}
+footer p{color:#c9d4ee}
+.fab{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#04230f;font-weight:800;padding:12px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+@media(max-width:480px){.g{grid-template-columns:1fr}.g .reg{grid-row:auto;grid-column:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top"><span>سنتر النخبة التعليمي</span><a href="tel:+201000000000">01000000000</a></div>
+    <div class="hero">
+      <h1>مجموعات صغيرة، <em>ومتابعة</em> لكل طالب</h1>
+      <p>ثانوية عامة بمجموعات لا تزيد عن 20 طالب. حضور متابعة يوميًا، واختبار أسبوعي، وتقرير يوصل لولي الأمر على واتساب.</p>
+      <a class="btn" href="#schedule">شوف المواعيد</a><a class="btn alt" href="#faq">أسئلة وأجوبة</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="schedule" style="margin-top:34px">
+    <h2>مواعيد المجموعات</h2>
+    <p class="sub">اختار صفك، واضغط "احجز مكان" وهنكمل معاك على واتساب.</p>
+    <div class="chips" id="chips" role="group" aria-label="الصف الدراسي"></div>
+    <div class="groups" id="groups" aria-live="polite"></div>
+  </section>
+
+  <section>
+    <h2>المدرسين</h2>
+    <p class="sub">كل مدرس بيتابع مجموعته بنفسه.</p>
+    <div class="teachers">
+      <div class="t"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="11" fill="#14213d"/><path d="M10 62c2-16 12-22 22-22s20 6 22 22z" fill="#14213d"/></svg><b>أ. محمود سعيد</b><span>رياضيات</span></div>
+      <div class="t"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="11" fill="#14213d"/><path d="M10 62c2-16 12-22 22-22s20 6 22 22z" fill="#14213d"/></svg><b>أ. هبة علي</b><span>لغة إنجليزية</span></div>
+      <div class="t"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="11" fill="#14213d"/><path d="M10 62c2-16 12-22 22-22s20 6 22 22z" fill="#14213d"/></svg><b>أ. خالد إبراهيم</b><span>فيزياء</span></div>
+      <div class="t"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="11" fill="#14213d"/><path d="M10 62c2-16 12-22 22-22s20 6 22 22z" fill="#14213d"/></svg><b>أ. نادية فوزي</b><span>كيمياء</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>إزاي بنتابع ابنك</h2>
+    <div class="why">
+      <div><b>تسجيل حضور وغياب</b><span>ولي الأمر بيوصله رسالة لو الطالب غاب.</span></div>
+      <div><b>اختبار أسبوعي</b><span>نتيجته بتتبعت للأهل مع ملاحظات المدرس.</span></div>
+      <div><b>مذكرات ومراجعات</b><span>مجانًا مع الاشتراك، بدون مصاريف إضافية.</span></div>
+      <div><b>حصة تعويضية</b><span>لو الطالب غاب بعذر، بنعوّضه في مجموعة تانية.</span></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>أسئلة بتتسأل كتير</h2>
+    <details><summary>أقدر أجرب حصة قبل الاشتراك؟</summary><p>أيوه، أول حصة تجريبية بدون التزام. احجز مكان وإحنا هنحدد معاك الميعاد.</p></details>
+    <details><summary>الدفع إزاي؟</summary><p>اشتراك شهري، بيتدفع في أول الشهر في السنتر أو بفودافون كاش.</p></details>
+    <details><summary>لو المجموعة اتملت؟</summary><p>بنحطك في قايمة الانتظار، وبنفتح مجموعة جديدة لما العدد يكمل.</p></details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>تعالى زورنا</h2>
+    <p>شارع الجمهورية، أمام مسجد الرحمن، الدور الثاني، المنصورة.<br>مواعيد الاستقبال: يوميًا من 10 صباحًا حتى 10 مساءً.</p>
+  </div>
+</footer>
+<a class="fab" id="fab" href="#">واتساب</a>
+
+<script>
+(function(){
+  var PHONE="201000000000";
+  var data={
+    "الصف الأول الثانوي":[
+      {s:"رياضيات",t:"أ. محمود سعيد",d:"السبت والثلاثاء",h:"4:00 م",p:350,full:false},
+      {s:"لغة إنجليزية",t:"أ. هبة علي",d:"الأحد والأربعاء",h:"5:30 م",p:300,full:false},
+      {s:"فيزياء",t:"أ. خالد إبراهيم",d:"الاثنين والخميس",h:"4:00 م",p:350,full:true}],
+    "الصف الثاني الثانوي":[
+      {s:"رياضيات",t:"أ. محمود سعيد",d:"الأحد والأربعاء",h:"7:00 م",p:400,full:false},
+      {s:"كيمياء",t:"أ. نادية فوزي",d:"السبت والثلاثاء",h:"6:00 م",p:380,full:false},
+      {s:"فيزياء",t:"أ. خالد إبراهيم",d:"الاثنين والخميس",h:"6:00 م",p:400,full:false}],
+    "الصف الثالث الثانوي":[
+      {s:"رياضيات",t:"أ. محمود سعيد",d:"السبت والاثنين والأربعاء",h:"8:00 م",p:500,full:false},
+      {s:"فيزياء",t:"أ. خالد إبراهيم",d:"الأحد والثلاثاء",h:"8:00 م",p:480,full:false},
+      {s:"لغة إنجليزية",t:"أ. هبة علي",d:"الخميس",h:"6:00 م",p:350,full:true}]
+  };
+  var grades=Object.keys(data),cur=grades[2];
+  var chips=document.getElementById("chips"),box=document.getElementById("groups");
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m)}
+  function render(){
+    box.innerHTML="";
+    data[cur].forEach(function(g){
+      var el=document.createElement("div");el.className="g";
+      var left=document.createElement("div");
+      var b=document.createElement("b");b.textContent=g.s+" مع "+g.t;
+      var m=document.createElement("div");m.className="meta";m.textContent=g.d+" الساعة "+g.h;
+      var p=document.createElement("div");p.className="price";p.textContent=g.p+" جنيه في الشهر";
+      left.appendChild(b);left.appendChild(m);left.appendChild(p);
+      var a=document.createElement("a");a.className="reg";
+      if(g.full){a.textContent="قايمة الانتظار"}else{a.textContent="احجز مكان"}
+      a.href=wa((g.full?"أهلًا، عايز أتسجل في قايمة الانتظار: ":"أهلًا، عايز أحجز مكان في: ")+g.s+" - "+cur+" ("+g.d+" "+g.h+")");
+      el.appendChild(left);el.appendChild(a);
+      if(g.full){var f=document.createElement("div");f.className="full";f.textContent="المجموعة مكتملة حاليًا";left.appendChild(f)}
+      box.appendChild(el);
+    });
+  }
+  grades.forEach(function(gr){
+    var c=document.createElement("button");c.type="button";c.className="chip";c.textContent=gr;
+    c.setAttribute("aria-pressed",gr===cur);
+    c.onclick=function(){cur=gr;[].forEach.call(chips.children,function(x){x.setAttribute("aria-pressed",x===c)});render()};
+    chips.appendChild(c);
+  });
+  render();
+  document.getElementById("fab").href=wa("أهلًا، عايز أستفسر عن المجموعات.");
+})();
+</script>
+</body>
+</html>

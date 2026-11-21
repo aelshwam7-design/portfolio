@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سوبر ماركت الخير – اطلب بقالتك أونلاين</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600;800&family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f6f2;--surface:#fff;--ink:#14301f;--muted:#55705f;--green:#1f9d55;--green-ink:#fff;--red:#e63946;--line:#d9e6dc;--tint:#e3f3e8;--bar:#14301f;--bar-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a13;--surface:#16271c;--ink:#e8f5ec;--muted:#9bb8a5;--green:#43c27a;--green-ink:#06210f;--red:#ff6b77;--line:#25402e;--tint:#1d3526;--bar:#e8f5ec;--bar-ink:#0f1a13}}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:Tajawal,Tahoma,Arial,sans-serif;line-height:1.6;font-size:16px;padding-bottom:170px}
+.head{background:var(--green);color:var(--green-ink);padding:12px 16px 18px;border-radius:0 0 26px 26px}
+.head .in,.wrap{max-width:900px;margin:0 auto}
+.brand{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.logo{font-family:"Baloo Bhaijaan 2",Tajawal,sans-serif;font-weight:800;font-size:26px;line-height:1.2}
+.brand span{font-size:13px;font-weight:500;background:rgba(255,255,255,.22);padding:2px 12px;border-radius:999px}
+.head input{width:100%;font:inherit;border:0;border-radius:14px;padding:12px 16px;background:#fff;color:#14301f}
+.head input:focus-visible,.chip:focus-visible,.qb:focus-visible,.add:focus-visible,.send:focus-visible,.bar input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{padding:0 16px}
+h2{font-family:"Baloo Bhaijaan 2",Tajawal,sans-serif;font-weight:800;font-size:23px;margin:22px 0 8px}
+.deals{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.deal{flex:none;width:210px;background:var(--red);color:#fff;border-radius:18px;padding:12px 14px;display:grid;grid-template-columns:1fr auto;align-items:center}
+.deal b{font-size:17px;line-height:1.3}
+.deal small{opacity:.9}
+.deal em{font-style:normal;font-size:38px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0 10px;scrollbar-width:none}
+.chip{flex:none;font:inherit;font-weight:800;border:2px solid var(--line);background:var(--surface);color:var(--ink);padding:5px 16px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--green-ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+@media(max-width:400px){.grid{grid-template-columns:1fr 1fr}}
+.tile{position:relative;background:var(--surface);border-radius:18px;padding:10px;display:flex;flex-direction:column;border:1px solid var(--line)}
+.em{font-size:48px;line-height:1;background:var(--tint);border-radius:14px;aspect-ratio:1.25;display:grid;place-items:center}
+.em img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.off{position:absolute;top:8px;inset-inline-start:8px;background:var(--red);color:#fff;font-size:12px;font-weight:800;padding:0 8px;border-radius:999px}
+.tile h3{font-size:15px;margin-top:8px;line-height:1.35}
+.tile small{color:var(--muted);font-size:13px}
+.pr{font-weight:800;font-size:18px;margin:2px 0 8px}
+.pr s{color:var(--muted);font-weight:400;font-size:13px;margin-inline-start:6px}
+.add{margin-top:auto;font:inherit;font-weight:800;border:0;border-radius:12px;background:var(--green);color:var(--green-ink);padding:8px;cursor:pointer}
+.q{margin-top:auto;display:flex;align-items:center;justify-content:space-between;background:var(--tint);border-radius:12px;padding:3px}
+.q span{font-weight:800}
+.qb{width:36px;height:32px;border:0;border-radius:9px;background:var(--surface);color:var(--green);font:inherit;font-weight:800;font-size:20px;cursor:pointer}
+.empty{grid-column:1/-1;color:var(--muted);padding:20px 0}
+.info{margin-top:26px;background:var(--tint);border-radius:16px;padding:14px 16px;color:var(--muted);font-size:15px}
+.info b{color:var(--ink)}
+.bar{position:fixed;inset-inline:0;bottom:0;background:var(--bar);color:var(--bar-ink);padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px));transform:translateY(110%);transition:transform .25s;border-radius:20px 20px 0 0}
+.bar.on{transform:none}
+.bar .in{max-width:900px;margin:0 auto;display:grid;gap:8px}
+.prog{height:8px;background:rgba(128,128,128,.35);border-radius:999px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--green);transition:width .25s}
+.hint{font-size:14px}
+.bar input{font:inherit;border:0;border-radius:10px;padding:9px 12px;background:#fff;color:#14301f;width:100%}
+.line{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800}
+.send{font:inherit;font-weight:800;background:var(--green);color:var(--green-ink);border:0;border-radius:12px;padding:10px 18px;cursor:pointer}
+.send:disabled{opacity:.45;cursor:not-allowed}
+@media (prefers-reduced-motion:reduce){.bar,.prog i{transition:none}}
+</style>
+</head>
+<body>
+<header class="head"><div class="in">
+  <div class="brand"><span class="logo">سوبر ماركت الخير</span><span>توصيل خلال ساعة</span></div>
+  <input id="q" type="search" placeholder="ابحث عن منتج، مثلًا: لبن" aria-label="بحث">
+</div></header>
+
+<main class="wrap">
+  <h2>عروض الأسبوع</h2>
+  <div class="deals" id="deals"></div>
+  <div class="chips" id="chips" role="group" aria-label="الأقسام"></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+  <div class="info"><b>الحد الأدنى للطلب:</b> 150 جنيه. <b>التوصيل:</b> 25 جنيه، ومجاني للطلبات فوق 300 جنيه.<br><b>الدفع:</b> كاش عند الاستلام. <b>مواعيد الاستلام:</b> من 9 صباحًا حتى 11 مساءً.</div>
+</main>
+
+<div class="bar" id="bar"><div class="in">
+  <div class="prog" aria-hidden="true"><i id="pg"></i></div>
+  <div class="hint" id="hint"></div>
+  <input id="where" type="text" placeholder="العنوان ورقم الموبايل" aria-label="العنوان ورقم الموبايل">
+  <div class="line"><span id="sum"></span><button class="send" id="send" type="button">ابعت الطلب</button></div>
+</div></div>
+
+<script>
+(function(){
+  var PHONE="201000000000",MIN=150,FREE=300,FEE=25;
+  // صور حقيقية: PHOTOS.s1="img/s1.jpg"
+  var PHOTOS={};
+  var P=[
+    {id:"s1",c:"خضار وفاكهة",n:"طماطم",u:"كيلو",p:22,e:"🍅"},
+    {id:"s2",c:"خضار وفاكهة",n:"موز",u:"كيلو",p:38,o:45,e:"🍌"},
+    {id:"s3",c:"خضار وفاكهة",n:"تفاح",u:"كيلو",p:65,e:"🍎"},
+    {id:"s4",c:"خضار وفاكهة",n:"خيار",u:"كيلو",p:18,e:"🥒"},
+    {id:"s5",c:"ألبان وبيض",n:"لبن كامل الدسم",u:"1 لتر",p:42,e:"🥛"},
+    {id:"s6",c:"ألبان وبيض",n:"بيض أبيض",u:"كرتونة 30",p:140,o:155,e:"🥚"},
+    {id:"s7",c:"ألبان وبيض",n:"جبنة رومي",u:"250 جم",p:60,e:"🧀"},
+    {id:"s8",c:"مخبوزات",n:"عيش توست",u:"عبوة",p:28,e:"🍞"},
+    {id:"s9",c:"مخبوزات",n:"كرواسون",u:"3 قطع",p:35,e:"🥐"},
+    {id:"s10",c:"مواد غذائية",n:"أرز مصري",u:"1 كيلو",p:34,e:"🍚"},
+    {id:"s11",c:"مواد غذائية",n:"مكرونة",u:"400 جم",p:12,e:"🍝"},
+    {id:"s12",c:"مواد غذائية",n:"زيت عباد الشمس",u:"1 لتر",p:78,o:90,e:"🫒"},
+    {id:"s13",c:"مشروبات",n:"مياه معدنية",u:"6 زجاجات",p:36,e:"💧"},
+    {id:"s14",c:"مشروبات",n:"عصير برتقال",u:"1 لتر",p:32,e:"🧃"},
+    {id:"s15",c:"منظفات",n:"سائل غسيل أطباق",u:"750 مل",p:48,e:"🧴"},
+    {id:"s16",c:"منظفات",n:"مناديل ورق",u:"عبوة",p:25,e:"🧻"}
+  ];
+  var DEALS=[["s2","موز بسعر خاص","خصم على الكيلو"],["s6","كرتونة البيض","وفّر 15 جنيه"],["s12","زيت عباد الشمس","وفّر 12 جنيه"]];
+  var cats=["الكل"],cur="الكل",qty={},term="";
+  P.forEach(function(x){if(cats.indexOf(x.c)<0)cats.push(x.c);qty[x.id]=0});
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+  function byId(i){return P.filter(function(x){return x.id===i})[0]}
+  var deals=document.getElementById("deals");
+  DEALS.forEach(function(d){var p=byId(d[0]),a=el("div","deal"),l=el("div");l.appendChild(el("b","",d[1]));l.appendChild(el("br"));l.appendChild(el("small","",d[2]));a.appendChild(l);a.appendChild(el("em","",p.e));deals.appendChild(a)});
+  var grid=document.getElementById("grid");
+  function render(){
+    grid.innerHTML="";
+    var r=P.filter(function(x){return (cur==="الكل"||x.c===cur)&&(!term||x.n.indexOf(term)>-1)});
+    if(!r.length){grid.appendChild(el("div","empty","مفيش منتج بالاسم ده."));return}
+    r.forEach(function(x){
+      var t=el("div","tile"),e=el("div","em");
+      if(PHOTOS[x.id]){var im=document.createElement("img");im.src=PHOTOS[x.id];im.alt=x.n;e.appendChild(im)}else e.textContent=x.e;
+      t.appendChild(e);
+      if(x.o)t.appendChild(el("span","off","وفّر "+(x.o-x.p)+" ج"));
+      t.appendChild(el("h3","",x.n));t.appendChild(el("small","",x.u));
+      var pr=el("div","pr",x.p+" جنيه");if(x.o)pr.appendChild(el("s","",String(x.o)));t.appendChild(pr);
+      if(!qty[x.id]){var a=el("button","add","أضف");a.type="button";a.onclick=function(){qty[x.id]=1;render();tot()};t.appendChild(a)}
+      else{var q=el("div","q"),m=el("button","qb","−"),pl=el("button","qb","+");m.type=pl.type="button";
+        m.setAttribute("aria-label","قلّل "+x.n);pl.setAttribute("aria-label","زوّد "+x.n);
+        m.onclick=function(){qty[x.id]--;render();tot()};pl.onclick=function(){qty[x.id]++;render();tot()};
+        q.appendChild(m);q.appendChild(el("span","",qty[x.id]));q.appendChild(pl);t.appendChild(q)}
+      grid.appendChild(t);
+    });
+  }
+  function total(){var s=0,c=0;P.forEach(function(x){c+=qty[x.id];s+=qty[x.id]*x.p});return{s:s,c:c}}
+  function tot(){
+    var t=total(),bar=document.getElementById("bar");
+    bar.classList.toggle("on",t.c>0);
+    var fee=t.s>=FREE?0:FEE;
+    document.getElementById("sum").textContent=t.c+" منتج | "+(t.s+fee)+" جنيه"+(fee?" (بالتوصيل)":"");
+    document.getElementById("pg").style.width=Math.min(100,t.s/FREE*100)+"%";
+    var h=document.getElementById("hint"),send=document.getElementById("send");
+    if(t.s<MIN){h.textContent="زوّد "+(MIN-t.s)+" جنيه عشان توصل للحد الأدنى للطلب.";send.disabled=true}
+    else if(t.s<FREE){h.textContent="باقي "+(FREE-t.s)+" جنيه وتاخد التوصيل مجانًا.";send.disabled=false}
+    else{h.textContent="التوصيل مجاني على طلبك.";send.disabled=false}
+  }
+  var cb=document.getElementById("chips");
+  cats.forEach(function(c){var b=el("button","chip",c);b.type="button";b.setAttribute("aria-pressed",c===cur);
+    b.onclick=function(){cur=c;[].forEach.call(cb.children,function(k){k.setAttribute("aria-pressed",k===b)});render()};cb.appendChild(b)});
+  document.getElementById("q").oninput=function(){term=this.value.trim();render()};
+  document.getElementById("send").onclick=function(){
+    var t=total(),m="أهلًا، عايز أطلب:\n";
+    P.forEach(function(x){if(qty[x.id]>0)m+="- "+x.n+" ("+x.u+") × "+qty[x.id]+"\n"});
+    var fee=t.s>=FREE?0:FEE;
+    m+="\nالمنتجات: "+t.s+" جنيه\nالتوصيل: "+(fee?fee+" جنيه":"مجاني")+"\nالإجمالي: "+(t.s+fee)+" جنيه";
+    var w=document.getElementById("where").value.trim();if(w)m+="\nالعنوان والموبايل: "+w;
+    window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(m),"_blank");
+  };
+  render();tot();
+})();
+</script>
+</body>
+</html>

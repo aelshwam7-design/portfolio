@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>صيدلية الشفاء – عناية وصحة لحد باب بيتك</title>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf4f7;--surface:#fff;--ink:#2e1722;--muted:#785b69;--accent:#c81e66;--accent-ink:#fff;--line:#eed6e1;--soft:#fde6ef;--plum:#3a1c2b;--plum-ink:#fff;--ok:#16a06a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a0e15;--surface:#27151f;--ink:#fbe9f1;--muted:#c4a0b2;--accent:#ff5c9d;--accent-ink:#3a0720;--line:#40263a;--soft:#38202e;--plum:#43202f;--plum-ink:#fff;--ok:#3ddc97}}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:calc(10px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Almarai,Tahoma,Arial,sans-serif;line-height:1.65;font-size:16px;padding-bottom:96px}
+.wrap{max-width:920px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-weight:800;font-size:23px}.logo i{font-style:normal;color:var(--accent)}
+.live{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;background:var(--surface);border:1px solid var(--line);padding:4px 12px;border-radius:999px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.hero{background:var(--plum);color:var(--plum-ink);border-radius:30px;padding:28px 22px 24px;position:relative;overflow:hidden}
+.hero h1{font-weight:800;font-size:clamp(30px,8vw,50px);line-height:1.2;max-width:12em;position:relative}
+.hero h1 em{font-style:normal;color:#ff8fbd}
+.hero p{opacity:.85;margin:10px 0 18px;max-width:28em;position:relative}
+.hero .deco{position:absolute;inset-inline-end:-24px;bottom:-30px;width:190px;opacity:.9}
+.btns{display:flex;flex-wrap:wrap;gap:10px;position:relative}
+.b{font:inherit;font-weight:800;border:0;border-radius:14px;padding:12px 22px;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.b.p{background:var(--accent);color:var(--accent-ink)}
+.b.g{background:rgba(255,255,255,.14);color:#fff}
+.b:focus-visible,.cat:focus-visible,.qb:focus-visible,.card:focus-visible,.qk:focus-visible,.x:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:14px}
+.perks div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-weight:800;font-size:15px;display:flex;gap:10px;align-items:center}
+.perks svg{flex:none;width:30px;height:30px;color:var(--accent)}
+.perks span{display:block;font-weight:400;color:var(--muted);font-size:13px}
+h2{font-weight:800;font-size:26px;margin:34px 0 10px}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.cat{font:inherit;background:var(--surface);border:2px solid var(--line);border-radius:20px;padding:14px 8px;text-align:center;cursor:pointer;color:var(--ink);font-weight:800}
+.cat svg{width:34px;height:34px;display:block;margin:0 auto 4px;color:var(--accent)}
+.cat small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.cat[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.cat[aria-pressed="true"] svg,.cat[aria-pressed="true"] small{color:var(--accent-ink)}
+.search{margin:14px 0}
+.search input{width:100%;font:inherit;border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:14px;padding:12px 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+@media(max-width:420px){.grid{grid-template-columns:1fr 1fr;gap:10px}}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:10px;display:flex;flex-direction:column;cursor:pointer;text-align:start;font:inherit;color:var(--ink)}
+.card:hover{border-color:var(--accent)}
+.pic{background:var(--soft);border-radius:16px;aspect-ratio:1;display:grid;place-items:center;overflow:hidden}
+.pic svg{width:68%;height:auto}
+.pic img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:16px;inset-inline-start:16px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:800;padding:0 9px;border-radius:999px}
+.tag.h{background:var(--plum);color:var(--plum-ink)}
+.card h3{font-size:15px;line-height:1.4;margin-top:8px}
+.card small{color:var(--muted);font-size:13px}
+.pr{font-weight:800;font-size:18px;margin:4px 0}
+.pr s{color:var(--muted);font-weight:400;font-size:13px;margin-inline-start:6px}
+.mini{margin-top:auto;text-align:center;background:var(--soft);color:var(--accent);font-weight:800;border-radius:12px;padding:7px;font-size:14px}
+.empty{grid-column:1/-1;color:var(--muted);padding:18px 0}
+.ask{background:var(--surface);border:2px solid var(--accent);border-radius:26px;padding:20px}
+.ask p{color:var(--muted);font-size:14px;margin:2px 0 12px}
+.qks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.qk{font:inherit;font-size:14px;font-weight:700;border:1px solid var(--line);background:var(--soft);color:var(--ink);padding:4px 14px;border-radius:999px;cursor:pointer}
+textarea,.fld{width:100%;font:inherit;border:2px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:10px 14px}
+textarea{min-height:80px;resize:vertical}
+.ask .b{width:100%;margin-top:10px}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.tip{background:var(--soft);border-radius:18px;padding:14px 16px}
+.tip b{display:block;margin-bottom:2px}.tip span{color:var(--muted);font-size:14px}
+.steps{display:grid;gap:10px;counter-reset:s}
+.st{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.st::before{counter-increment:s;content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--plum);color:var(--plum-ink);display:grid;place-items:center;font-weight:800}
+.st span{color:var(--muted);font-size:14px;display:block}
+.note{color:var(--muted);font-size:13px;margin-top:18px}
+footer{margin-top:30px;background:var(--plum);color:var(--plum-ink);padding:22px 0 110px;font-size:15px}
+footer b{font-size:20px}
+.bar{position:fixed;inset-inline:0;bottom:0;background:var(--plum);color:var(--plum-ink);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));transform:translateY(110%);transition:transform .25s;z-index:20}
+.bar.on{transform:none}
+.bar .in{max-width:920px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800}
+.ov{position:fixed;inset:0;background:rgba(15,5,10,.6);z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.ov[hidden]{display:none}
+.sheet{position:relative;background:var(--bg);width:100%;max-width:620px;max-height:90vh;overflow-y:auto;border-radius:26px 26px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom,0px))}
+.x{position:absolute;top:10px;inset-inline-end:12px;width:38px;height:38px;border-radius:50%;border:0;background:var(--soft);color:var(--ink);font-size:22px;cursor:pointer}
+.sheet .pic{max-width:220px;margin:6px auto 12px}
+.sheet h3{font-size:22px;margin-bottom:2px}
+.box{background:var(--soft);border-radius:14px;padding:10px 14px;margin:10px 0;font-size:14px;color:var(--muted)}
+.box b{color:var(--ink)}
+.qr{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.q{display:flex;align-items:center;gap:6px;background:var(--soft);border-radius:12px;padding:3px}
+.q span{min-width:26px;text-align:center;font-weight:800}
+.qb{width:36px;height:34px;border:0;border-radius:9px;background:var(--surface);color:var(--accent);font:inherit;font-weight:800;font-size:20px;cursor:pointer}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.row small{color:var(--muted)}
+.sum{margin:12px 0;display:grid;gap:4px}
+.sum div{display:flex;justify-content:space-between}
+.sum .t{font-weight:800;font-size:20px;border-top:2px solid var(--ink);padding-top:6px;margin-top:4px}
+.fld{margin-top:8px}
+.hint{color:var(--ok);font-weight:700;font-size:14px}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span class="logo">صيدلية <i>الشفاء</i></span><span class="live">الصيدلي متاح الآن</span></div>
+
+  <div class="hero">
+    <svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><rect x="28" y="34" width="44" height="58" rx="13" fill="#c81e66"/><rect x="36" y="16" width="28" height="20" rx="6" fill="#fff" opacity=".9"/><rect x="35" y="52" width="30" height="24" rx="4" fill="#fff" opacity=".9"/><path d="M50 56v16M42 64h16" stroke="#c81e66" stroke-width="4"/></svg>
+    <h1>عنايتك وصحتك <em>لحد باب بيتك</em></h1>
+    <p>صيدلي مرخّص بيراجع طلبك ويرد عليك على واتساب، ومنتجات عناية وفيتامينات ومستلزمات الأم والطفل.</p>
+    <div class="btns"><a class="b p" id="rx" href="#" target="_blank" rel="noopener">ابعت روشتتك</a><a class="b g" href="#shop">تسوّق المنتجات</a></div>
+  </div>
+
+  <div class="perks">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.500" r="1.800"/><circle cx="17" cy="17.500" r="1.800"/></svg><div>توصيل سريع<span>30 إلى 60 دقيقة داخل المنطقة</span></div></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><div>منتجات أصلية<span>من موزعين معتمدين</span></div></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.500"/></svg><div>الدفع عند الاستلام<span>كاش أو محفظة</span></div></div>
+  </div>
+
+  <h2 id="shop">الأقسام</h2>
+  <div class="cats" id="cats" role="group" aria-label="الأقسام"></div>
+  <div class="search"><input id="q" type="search" placeholder="ابحث عن منتج، مثلًا: واقي شمس" aria-label="بحث"></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+
+  <h2>اسأل الصيدلي</h2>
+  <div class="ask">
+    <p>اكتب اسم المنتج أو الدواء أو استفسارك، والصيدلي يرد عليك بالسعر والتوفر والنصيحة المناسبة.</p>
+    <div class="qks" id="qks"></div>
+    <textarea id="req" placeholder="اكتب سؤالك هنا..." aria-label="سؤالك للصيدلي"></textarea>
+    <button class="b p" id="reqb" type="button">ابعت للصيدلي على واتساب</button>
+  </div>
+
+  <h2>نصايح سريعة للعناية</h2>
+  <div class="tips">
+    <div class="tip"><b>واقي الشمس كل يوم</b><span>حتى في الشتا وفي البيت، وجدده لو قضيت وقت طويل برّه.</span></div>
+    <div class="tip"><b>جرّب المنتج الجديد الأول</b><span>حطه على مساحة صغيرة قبل ما تستخدمه على وشك كله.</span></div>
+    <div class="tip"><b>اسأل قبل أي مكمل</b><span>الفيتامينات مش لكل الناس بنفس الشكل، فاسأل الصيدلي أو الدكتور.</span></div>
+  </div>
+
+  <h2>إزاي تطلب</h2>
+  <div class="steps">
+    <div class="st"><div>اختار منتجاتك أو ابعت الروشتة<span>من الموقع أو من خلال واتساب.</span></div></div>
+    <div class="st"><div>الصيدلي بيراجع الطلب<span>ويأكد التوفر والسعر معاك.</span></div></div>
+    <div class="st"><div>بيوصلك لحد البيت<span>وتدفع عند الاستلام.</span></div></div>
+  </div>
+  <p class="note">الأدوية اللي بتتصرف بروشتة بتتسلم بعد مراجعة الصيدلي للروشتة. المعلومات هنا للتعريف فقط، وهي مش بديل عن استشارة الطبيب أو الصيدلي.</p>
+</div>
+
+<footer><div class="wrap"><b>صيدلية الشفاء</b><br>شارع النصر، بجوار البنك الأهلي، طنطا.<br>مفتوحة يوميًا من 9 صباحًا حتى 12 بالليل. ترخيص رقم: ____</div></footer>
+
+<div class="bar" id="bar"><div class="in"><span id="sum"></span><button class="b p" id="open" type="button">مراجعة الطلب</button></div></div>
+<div class="ov" id="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-label="تفاصيل"><button class="x" id="x" type="button" aria-label="إغلاق">×</button><div id="sb"></div></div></div>
+
+<script>
+(function(){
+  var PHONE="201000000000",FREE=250,FEE=20;
+  // صور حقيقية: PHOTOS.p1="img/p1.jpg"
+  var PHOTOS={};
+  var P=[
+    {id:"p1",c:"العناية بالبشرة",n:"كريم مرطب للوجه",s:"للبشرة الجافة 50 مل",p:180,o:210,sh:"jar",col:"#f4a6c0",d:"ترطيب يومي بتركيبة خفيفة تناسب البشرة الجافة.",u:"طبقة رقيقة على بشرة نظيفة صباحًا ومساءً."},
+    {id:"p2",c:"العناية بالبشرة",n:"واقي شمس SPF50",s:"ملمس خفيف بدون لمعان",p:320,sh:"tube",col:"#ffc857",hot:1,d:"حماية واسعة من أشعة الشمس بملمس مريح تحت المكياج.",u:"ضعه قبل الخروج بـ 15 دقيقة وجدده كل ساعتين عند التعرض للشمس."},
+    {id:"p3",c:"العناية بالبشرة",n:"سيروم فيتامين سي",s:"لإشراقة البشرة",p:450,o:520,sh:"bottle",col:"#ff9f43",d:"سيروم خفيف لمظهر أكثر إشراقًا وتوحيدًا للون البشرة.",u:"صباحًا قبل المرطب. جرّبه على منطقة صغيرة أولًا."},
+    {id:"p4",c:"العناية بالبشرة",n:"غسول وجه لطيف",s:"لكل أنواع البشرة",p:150,sh:"bottle",col:"#7fd1c8",d:"ينظف بلطف من غير ما يجفف البشرة.",u:"مرتين يوميًا مع الشطف بماء فاتر."},
+    {id:"v1",c:"فيتامينات",n:"فيتامين سي",s:"عبوة 30 قرص",p:90,sh:"bottle",col:"#ffb347",d:"مكمل غذائي.",u:"اسأل الصيدلي أو الدكتور عن الاستخدام المناسب ليك."},
+    {id:"v2",c:"فيتامينات",n:"أوميجا 3",s:"عبوة 60 كبسولة",p:280,o:320,sh:"bottle",col:"#5aa9e6",hot:1,d:"مكمل غذائي.",u:"اسأل الصيدلي أو الدكتور عن الاستخدام المناسب ليك."},
+    {id:"v3",c:"فيتامينات",n:"مالتي فيتامين",s:"عبوة 30 قرص",p:200,sh:"bottle",col:"#9b8cf0",d:"مكمل غذائي متعدد.",u:"اسأل الصيدلي أو الدكتور عن الاستخدام المناسب ليك."},
+    {id:"b1",c:"الأم والطفل",n:"كريم الحفاضات",s:"حماية وتهدئة 75 جم",p:75,sh:"tube",col:"#8fd3a1",d:"طبقة حماية لطيفة لمنطقة الحفاض.",u:"بعد التنظيف والتجفيف مع كل تغيير."},
+    {id:"b2",c:"الأم والطفل",n:"مناديل مبللة للأطفال",s:"عبوة 80 منديل",p:60,sh:"jar",col:"#a5d8ff",d:"مناديل ناعمة وسهلة الاستخدام في أي وقت.",u:"للاستخدام الخارجي فقط."},
+    {id:"b3",c:"الأم والطفل",n:"شامبو أطفال",s:"بدون دموع 250 مل",p:110,o:130,sh:"bottle",col:"#ffd6a5",d:"تركيبة لطيفة على فروة رأس الطفل.",u:"تجنّب ملامسة العين، واشطف جيدًا."},
+    {id:"m1",c:"مستلزمات",n:"ميزان حرارة رقمي",s:"قراءة سريعة",p:120,sh:"box",col:"#6fb7ff",d:"ميزان حرارة بسيط للاستخدام المنزلي.",u:"اتبع تعليمات الشركة المصنعة."},
+    {id:"m2",c:"مستلزمات",n:"طقم إسعافات أولية",s:"شاش وبلاستر وقطن",p:55,sh:"box",col:"#ef6b6b",d:"أساسيات للجروح البسيطة في البيت.",u:"للجروح العميقة راجع الطبيب."}
+  ];
+  var ICONS={"الكل":'<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>',"العناية بالبشرة":'<path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/>',"فيتامينات":'<rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-35 12 12)"/><path d="M9 6.500l6 11" />',"الأم والطفل":'<path d="M12 20s-7-4.500-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.500-7 10-7 10z"/>',"مستلزمات":'<path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z"/>'};
+  var cats=["الكل"],cur="الكل",term="",qty={};
+  P.forEach(function(x){if(cats.indexOf(x.c)<0)cats.push(x.c);qty[x.id]=0});
+  function h(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m)}
+  function by(i){return P.filter(function(x){return x.id===i})[0]}
+  function svg(sh,col){
+    var shd='<ellipse cx="50" cy="94" rx="26" ry="4" fill="rgba(0,0,0,.14)"/>',hl='<rect x="%X" y="%Y" width="4" height="%H" rx="2" fill="#fff" opacity=".35"/>';
+    var b={jar:shd+'<rect x="20" y="40" width="60" height="50" rx="11" fill="'+col+'"/><rect x="24" y="24" width="52" height="19" rx="6" fill="rgba(0,0,0,.32)"/><rect x="30" y="54" width="40" height="22" rx="4" fill="#fff" opacity=".9"/><rect x="35" y="60" width="30" height="3" rx="1.500" fill="'+col+'"/><rect x="35" y="67" width="20" height="3" rx="1.500" fill="'+col+'" opacity=".6"/>',
+      bottle:shd+'<rect x="40" y="6" width="20" height="14" rx="3" fill="rgba(0,0,0,.32)"/><rect x="35" y="18" width="30" height="12" rx="3" fill="'+col+'"/><rect x="25" y="28" width="50" height="64" rx="13" fill="'+col+'"/><rect x="32" y="46" width="36" height="28" rx="4" fill="#fff" opacity=".9"/><rect x="37" y="52" width="26" height="3" rx="1.500" fill="'+col+'"/><rect x="37" y="59" width="18" height="3" rx="1.500" fill="'+col+'" opacity=".6"/><rect x="31" y="36" width="4" height="46" rx="2" fill="#fff" opacity=".3"/>',
+      tube:shd+'<path d="M28 14h44l-6 64H34z" fill="'+col+'"/><rect x="33" y="76" width="34" height="14" rx="3" fill="rgba(0,0,0,.32)"/><rect x="36" y="34" width="28" height="22" rx="4" fill="#fff" opacity=".9"/><rect x="40" y="40" width="20" height="3" rx="1.500" fill="'+col+'"/><rect x="40" y="47" width="13" height="3" rx="1.500" fill="'+col+'" opacity=".6"/>',
+      box:shd+'<rect x="14" y="28" width="72" height="56" rx="9" fill="'+col+'"/><rect x="14" y="28" width="72" height="12" rx="6" fill="rgba(0,0,0,.18)"/><path d="M50 46v26M37 59h26" stroke="#fff" stroke-width="8" stroke-linecap="round"/>'}[sh];
+    return '<svg viewBox="0 0 100 100" aria-hidden="true">'+b+'</svg>'}
+  function pic(x){var d=h("div","pic");if(PHOTOS[x.id]){var im=h("img");im.src=PHOTOS[x.id];im.alt=x.n;d.appendChild(im)}else d.innerHTML=svg(x.sh,x.col);return d}
+  function disc(x){return x.o?Math.round((x.o-x.p)/x.o*100):0}
+  function priceEl(x){var p=h("div","pr",x.p+" جنيه");if(x.o)p.appendChild(h("s","",String(x.o)));return p}
+
+  var grid=document.getElementById("grid");
+  function render(){
+    grid.innerHTML="";
+    var r=P.filter(function(x){return (cur==="الكل"||x.c===cur)&&(!term||x.n.indexOf(term)>-1||x.s.indexOf(term)>-1)});
+    if(!r.length){grid.appendChild(h("div","empty","مفيش منتج بالاسم ده. اكتب طلبك في خانة (اسأل الصيدلي) وهنرد عليك."));return}
+    r.forEach(function(x){
+      var c=h("button","card");c.type="button";c.appendChild(pic(x));
+      if(x.o)c.appendChild(h("span","tag","خصم "+disc(x)+"%"));else if(x.hot)c.appendChild(h("span","tag h","الأكثر طلبًا"));
+      c.appendChild(h("h3","",x.n));c.appendChild(h("small","",x.s));c.appendChild(priceEl(x));
+      c.appendChild(h("span","mini",qty[x.id]?"في الطلب: "+qty[x.id]:"التفاصيل والإضافة"));
+      c.onclick=function(){openProduct(x)};grid.appendChild(c);
+    });
+  }
+  var cb=document.getElementById("cats");
+  cats.forEach(function(c){
+    var n=c==="الكل"?P.length:P.filter(function(x){return x.c===c}).length;
+    var b=h("button","cat");b.type="button";b.setAttribute("aria-pressed",c===cur);
+    b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICONS[c]+'</svg>';
+    b.appendChild(document.createTextNode(c));b.appendChild(h("small","",n+" منتج"));
+    b.onclick=function(){cur=c;[].forEach.call(cb.children,function(k){k.setAttribute("aria-pressed",k===b)});render()};cb.appendChild(b);
+  });
+  document.getElementById("q").oninput=function(){term=this.value.trim();render()};
+
+  var ov=document.getElementById("ov"),sb=document.getElementById("sb"),lastF=null;
+  function openSheet(fn){sb.innerHTML="";fn(sb);lastF=document.activeElement;ov.hidden=false;document.body.style.overflow="hidden";document.getElementById("x").focus()}
+  function closeSheet(){ov.hidden=true;document.body.style.overflow="";if(lastF&&lastF.focus)lastF.focus()}
+  document.getElementById("x").onclick=closeSheet;
+  ov.onclick=function(e){if(e.target===ov)closeSheet()};
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!ov.hidden)closeSheet()});
+
+  function stepper(get,set){
+    var q=h("div","q"),m=h("button","qb","−"),pl=h("button","qb","+"),n=h("span","",get());
+    m.type=pl.type="button";m.setAttribute("aria-label","قلّل");pl.setAttribute("aria-label","زوّد");
+    m.onclick=function(){set(-1);n.textContent=get()};pl.onclick=function(){set(1);n.textContent=get()};
+    q.appendChild(m);q.appendChild(n);q.appendChild(pl);return q}
+  function openProduct(x){
+    var n=Math.max(1,qty[x.id]);
+    openSheet(function(s){
+      s.appendChild(pic(x));s.appendChild(h("h3","",x.n));s.appendChild(h("small","",x.s));
+      var b1=h("div","box");b1.appendChild(h("b","","الوصف: "));b1.appendChild(document.createTextNode(x.d));s.appendChild(b1);
+      var b2=h("div","box");b2.appendChild(h("b","","الاستخدام: "));b2.appendChild(document.createTextNode(x.u));s.appendChild(b2);
+      s.appendChild(priceEl(x));
+      var r=h("div","qr");r.appendChild(stepper(function(){return n},function(d){n=Math.max(1,n+d)}));
+      var a=h("button","b p",qty[x.id]?"تحديث الطلب":"أضف للطلب");a.type="button";
+      a.onclick=function(){qty[x.id]=n;closeSheet();render();tot()};r.appendChild(a);s.appendChild(r);
+      var ask=h("a","b g","اسأل الصيدلي عن المنتج");ask.style.cssText="display:block;margin-top:10px;background:var(--soft);color:var(--accent)";
+      ask.href=wa("أهلًا، عندي سؤال عن: "+x.n);ask.target="_blank";ask.rel="noopener";s.appendChild(ask);
+    });
+  }
+  var info={w:"",nt:""};
+  function calc(){var s=0,c=0;P.forEach(function(x){c+=qty[x.id];s+=qty[x.id]*x.p});return{s:s,c:c,f:s>=FREE||!s?0:FEE}}
+  function tot(){var t=calc();document.getElementById("bar").classList.toggle("on",t.c>0);
+    document.getElementById("sum").textContent=t.c+" منتج | "+t.s+" جنيه"}
+  function openCart(){
+    openSheet(function(s){
+      s.appendChild(h("h3","","طلبك"));
+      function body(){
+        while(s.childNodes.length>1)s.removeChild(s.lastChild);
+        var t=calc();
+        if(!t.c){s.appendChild(h("p","note","الطلب فاضي."));return}
+        P.filter(function(x){return qty[x.id]>0}).forEach(function(x){
+          var r=h("div","row"),l=h("div");l.appendChild(h("b","",x.n));l.appendChild(h("br"));l.appendChild(h("small","",x.p+" جنيه"));
+          r.appendChild(l);
+          r.appendChild(stepper(function(){return qty[x.id]},function(d){qty[x.id]=Math.max(0,qty[x.id]+d);render();tot();body()}));
+          s.appendChild(r);
+        });
+        var sm=h("div","sum");
+        [["المنتجات",t.s+" جنيه"],["التوصيل",t.f?t.f+" جنيه":"مجاني"]].forEach(function(a){var d=h("div");d.appendChild(h("span","",a[0]));d.appendChild(h("span","",a[1]));sm.appendChild(d)});
+        var tt=h("div","t");tt.appendChild(h("span","","الإجمالي"));tt.appendChild(h("span","",(t.s+t.f)+" جنيه"));sm.appendChild(tt);s.appendChild(sm);
+        s.appendChild(h("div","hint",t.f?"باقي "+(FREE-t.s)+" جنيه وتاخد التوصيل مجانًا.":"التوصيل مجاني على طلبك."));
+        var w=h("input","fld");w.placeholder="العنوان ورقم الموبايل";w.value=info.w;w.setAttribute("aria-label","العنوان ورقم الموبايل");w.oninput=function(){info.w=this.value};s.appendChild(w);
+        var nt=h("input","fld");nt.placeholder="ملاحظات للصيدلي (اختياري)";nt.value=info.nt;nt.setAttribute("aria-label","ملاحظات");nt.oninput=function(){info.nt=this.value};s.appendChild(nt);
+        var go=h("button","b p","ابعت الطلب على واتساب");go.type="button";go.style.cssText="width:100%;margin-top:12px";
+        go.onclick=function(){var m="أهلًا، عايز أطلب:\n";P.forEach(function(x){if(qty[x.id]>0)m+="- "+x.n+" × "+qty[x.id]+"\n"});
+          m+="\nالمنتجات: "+t.s+" جنيه\nالتوصيل: "+(t.f?t.f+" جنيه":"مجاني")+"\nالإجمالي: "+(t.s+t.f)+" جنيه";
+          if(info.w.trim())m+="\nالعنوان والموبايل: "+info.w.trim();if(info.nt.trim())m+="\nملاحظات: "+info.nt.trim();
+          window.open(wa(m),"_blank")};
+        s.appendChild(go);
+      }
+      body();
+    });
+  }
+  document.getElementById("open").onclick=openCart;
+
+  var Q=["عايز أسأل عن دواء","محتاج ترشيح لبشرة دهنية","منتجات لطفل رضيع","استفسار عن توفر منتج"],qk=document.getElementById("qks"),rq=document.getElementById("req");
+  Q.forEach(function(t){var b=h("button","qk",t);b.type="button";b.onclick=function(){rq.value=t+": ";rq.focus()};qk.appendChild(b)});
+  document.getElementById("reqb").onclick=function(){window.open(wa("أهلًا يا دكتور، "+(rq.value.trim()||"عندي استفسار")),"_blank")};
+  var rx=document.getElementById("rx");rx.href=wa("أهلًا، هبعتلك صورة الروشتة عشان تراجعها وتجهزلي الأدوية.");
+  render();tot();
+})();
+</script>
+</body>
+</html>

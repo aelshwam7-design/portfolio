@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>مواقع بتجيب لك طلبات على واتساب – أعمالي</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #f5f6f8;
+            --surface: #fff;
+            --ink: #101828;
+            --muted: #566075;
+            --accent: #0a64ff;
+            --accent-ink: #fff;
+            --line: #dfe3ea;
+            --win: #eef1f6;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+        
+        @media (prefers-color-scheme:dark) {
+             :root:not([data-theme="light"]) {
+                --bg: #0c111b;
+                --surface: #141b2a;
+                --ink: #eef2fa;
+                --muted: #9aa6bf;
+                --accent: #5b97ff;
+                --accent-ink: #06142e;
+                --line: #232d44;
+                --win: #1b2438
+            }
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0
+        }
+        
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+            scroll-behavior: smooth
+        }
+        
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "IBM Plex Sans Arabic", Tahoma, Arial, sans-serif;
+            line-height: 1.7;
+            font-size: 17px
+        }
+        
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+        
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0
+        }
+        
+        .top b {
+            font-size: 19px
+        }
+        
+        .top a {
+            color: var(--ink);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid var(--accent)
+        }
+        
+        .hero {
+            padding: 40px 0 30px
+        }
+        
+        .hero h1 {
+            font-weight: 700;
+            font-size: clamp(34px, 9vw, 64px);
+            line-height: 1.2;
+            max-width: 14em
+        }
+        
+        .hero p {
+            color: var(--muted);
+            margin: 14px 0 24px;
+            max-width: 32em
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--accent-ink);
+            font: inherit;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 12px;
+            text-decoration: none
+        }
+        
+        .btn.o {
+            background: transparent;
+            color: var(--ink);
+            border: 2px solid var(--ink);
+            margin-inline-start: 8px
+        }
+        
+        .btn:focus-visible,
+        .card a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px
+        }
+        
+        section {
+            margin-top: 56px
+        }
+        
+        h2 {
+            font-weight: 700;
+            font-size: clamp(26px, 6vw, 36px);
+            margin-bottom: 6px
+        }
+        
+        .sub {
+            color: var(--muted);
+            margin-bottom: 20px
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 18px
+        }
+        
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column
+        }
+        
+        .card svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: var(--win)
+        }
+        
+        .cb {
+            padding: 14px 18px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1
+        }
+        
+        .cb h3 {
+            font-size: 20px
+        }
+        
+        .cb p {
+            color: var(--muted);
+            font-size: 15px
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 6px 0 10px
+        }
+        
+        .tags span {
+            font-size: 13px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 0 10px;
+            color: var(--muted)
+        }
+        
+        .card a {
+            margin-top: auto;
+            color: var(--accent);
+            font-weight: 700;
+            text-decoration: none
+        }
+        
+        .steps {
+            display: grid;
+            gap: 12px;
+            counter-reset: s
+        }
+        
+        .st {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 14px 16px
+        }
+        
+        .st::before {
+            counter-increment: s;
+            content: counter(s);
+            flex: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--ink);
+            color: var(--bg);
+            display: grid;
+            place-items: center;
+            font-weight: 700
+        }
+        
+        .st b {
+            display: block
+        }
+        
+        .st span {
+            color: var(--muted);
+            font-size: 15px
+        }
+        
+        .prices {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px
+        }
+        
+        .pk {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px
+        }
+        
+        .pk.hot {
+            border: 2px solid var(--accent)
+        }
+        
+        .pk h3 {
+            font-size: 20px
+        }
+        
+        .pk .p {
+            font-size: 30px;
+            font-weight: 700;
+            margin: 4px 0
+        }
+        
+        .pk .p small {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--muted)
+        }
+        
+        .pk ul {
+            list-style: none;
+            color: var(--muted);
+            font-size: 15px
+        }
+        
+        .pk li {
+            padding: 2px 0
+        }
+        
+        .pk li::before {
+            content: "✓ ";
+            color: var(--accent);
+            font-weight: 700
+        }
+        
+        .note {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 10px
+        }
+        
+        .cta {
+            margin-top: 60px;
+            background: var(--ink);
+            color: var(--bg);
+            border-radius: 24px;
+            padding: 34px 24px;
+            text-align: center
+        }
+        
+        .cta h2 {
+            margin-bottom: 8px
+        }
+        
+        .cta p {
+            opacity: .8;
+            margin-bottom: 18px
+        }
+        
+        .cta .btn {
+            background: #25d366;
+            color: #04230f
+        }
+        
+        footer {
+            padding: 26px 0 40px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 14px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="top"><b id="name"></b><a id="topwa" href="#">كلمني واتساب</a></div>
+
+        <div class="hero">
+            <h1>مواقع بسيطة وسريعة، بتجيب لك طلبات على واتساب</h1>
+            <p>بعمل مواقع للعيادات والمطاعم والمحلات والسناتر والجيمات والمكاتب العقارية. الموقع بيشتغل كويس على الموبايل، والعميل بيحجز أو يطلب بضغطة واحدة.</p>
+            <a class="btn" href="#work">شوف أعمالي</a><a class="btn o" href="#price">الأسعار</a>
+        </div>
+
+        <section id="work" style="margin-top:30px">
+            <h2>أعمالي</h2>
+            <p class="sub">كل نموذج بستايل مختلف، وبيتعدل بالكامل على بيزنس العميل: الاسم والألوان والصور والأسعار.</p>
+            <div class="grid" id="grid"></div>
+        </section>
+
+        <section>
+            <h2>إزاي بنشتغل مع بعض</h2>
+            <div class="steps">
+                <div class="st">
+                    <div><b>بنتكلم على واتساب</b><span>تقولي شغلك إيه وعايز الموقع يعمل إيه.</span></div>
+                </div>
+                <div class="st">
+                    <div><b>أعرض عليك نموذج قريب من شغلك</b><span>وتحدد الألوان والصور والمحتوى.</span></div>
+                </div>
+                <div class="st">
+                    <div><b>أسلّمك الموقع شغال</b><span>خلال 3 إلى 5 أيام، بلينك ودومين لو عايز.</span></div>
+                </div>
+                <div class="st">
+                    <div><b>دعم بعد التسليم</b><span>أي تعديل صغير في أول شهر بدون مقابل.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="price">
+            <h2>الأسعار</h2>
+            <p class="sub">الأسعار تقريبية حسب المطلوب، والسعر النهائي بنتفق عليه قبل ما نبدأ.</p>
+            <div class="prices" id="prices"></div>
+            <p class="note">الدومين والاستضافة مصاريفهم السنوية على العميل، وبساعدك تشتريهم.</p>
+        </section>
+
+        <div class="cta">
+            <h2>عايز موقع لشغلك؟</h2>
+            <p>ابعتلي اسم نشاطك على واتساب، وأرجعلك بنموذج واقتراح خلال يوم.</p>
+            <a class="btn" id="ctawa" href="#">ابدأ المحادثة</a>
+        </div>
+        <footer id="foot"></footer>
+    </div>
+
+    <script>
+        (function() {
+            // === عدّل هنا قبل ما تنشر ===
+            var NAME = "Ahmed Elshawam";
+            var PHONE = "https://wa.me/201277596435";
+            var PROJECTS = [{
+                t: "عيادة أسنان",
+                d: "حجز بضغطة واحدة على واتساب، وأسعار الخدمات، وقبل وبعد.",
+                tags: ["حجز واتساب", "قبل وبعد", "أسعار"],
+                c: ["#e6f4f1", "#0f766e", "#12302f"],
+                u: "clinic-demo.html"
+            }, {
+                t: "سنتر تعليمي",
+                d: "جدول مجموعات بيتفلتر حسب الصف، وحجز مكان أو قايمة انتظار.",
+                tags: ["جدول", "فلتر", "حجز"],
+                c: ["#e6ebf8", "#f5a524", "#14213d"],
+                u: "center-demo.html"
+            }, {
+                t: "محل ملابس",
+                d: "أقسام وألوان ومقاسات، والطلب بيوصل لصاحب المحل على واتساب.",
+                tags: ["ألوان ومقاسات", "طلب واتساب"],
+                c: ["#ece6fa", "#ff5a4e", "#2a1740"],
+                u: "shop-demo.html"
+            }, {
+                t: "كافيه ومنيو أونلاين",
+                d: "منيو بأسعار وعدّاد كميات وإجمالي، وإرسال الطلب كامل بزر واحد.",
+                tags: ["منيو", "سلة", "طلب واتساب"],
+                c: ["#ffe0b8", "#ff7a1a", "#000000"],
+                u: "cafe-demo.html"
+            }, {
+                t: "جيم ومدرب شخصي",
+                d: "باقات بأسعار حسب المدة، وجدول حصص أسبوعي، وحجز حصة تجريبية.",
+                tags: ["باقات", "جدول حصص", "اشتراك"],
+                c: ["#f0f0f0", "#e10600", "#111111"],
+                u: "gym-demo.html"
+            }, {
+                t: "مكتب عقارات",
+                d: "وحدات بفلتر المنطقة والنوع والسعر، وطلب معاينة لكل وحدة.",
+                tags: ["فلتر", "وحدات", "معاينة"],
+                c: ["#eef2ef", "#1f4d3a", "#16211b"],
+                u: "estate.html"
+            }, {
+                t: "سوبر ماركت",
+                d: "منتجات غذائية بال نوع والسعر، وطلب بيوصل على واتساب.",
+                tags: ["مواد غذائيه", "اكل", "مشروبات"],
+                c: ["#eef2ef", "#1f4d3a", "#63C888"],
+                u: "market-demo.html"
+            }, {
+                t: "ويب صيدليه",
+                d: "منتجات العنايه بالبشره والشعر و العنايه بالشعر السعر، وطلب بيوصل على واتساب.",
+                tags: ["مستلزمات طبيه", "الام و الطفل", "بشره"],
+                c: ["#eef2ef", "#D2578E", "#D2578E"],
+                u: "pharmacy-demo.html"
+            }, {
+                t: "ويب موبيل فون",
+                d: "منتجات الفون و اكسسوارات الفونات و يوجد لدينا تليفونات جديد و استعمال السعر، وطلب بيوصل على واتساب.",
+                tags: ["تليفونات", "اكسسوارات"],
+                c: ["#eef2ef", "#000000", "#000000"],
+                u: "mobil-demo.html"
+            }];
+            var PRICES = [{
+                n: "صفحة واحدة",
+                p: "2,500",
+                f: ["صفحة هبوط كاملة", "زر واتساب واتصال", "شغال على الموبايل"]
+            }, {
+                n: "موقع تفاعلي",
+                p: "4,500",
+                hot: 1,
+                f: ["فلاتر أو حجز أو منيو", "طلب بيوصل على واتساب", "تعديلات في أول شهر"]
+            }, {
+                n: "موقع بمنتجات كتير",
+                p: "7,000",
+                f: ["متجر أو كتالوج كبير", "سلة وإجمالي", "صور المنتجات"]
+            }];
+
+            function el(t, c, x) {
+                var e = document.createElement(t);
+                if (c) e.className = c;
+                if (x) e.textContent = x;
+                return e
+            }
+
+            function wa(m) {
+                return PHONE + "?text=" + encodeURIComponent(m)
+            }
+
+            function thumb(c) {
+                return '<svg viewBox="0 0 300 180" aria-hidden="true"><rect width="300" height="180" fill="' + c[0] + '"/><rect width="300" height="22" fill="' + c[2] + '" opacity=".9"/><circle cx="14" cy="11" r="3" fill="#fff"/><circle cx="25" cy="11" r="3" fill="#fff" opacity=".7"/><circle cx="36" cy="11" r="3" fill="#fff" opacity=".4"/><rect x="170" y="40" width="110" height="14" rx="3" fill="' + c[2] + '"/><rect x="200" y="62" width="80" height="14" rx="3" fill="' + c[2] + '"/><rect x="190" y="88" width="90" height="22" rx="5" fill="' + c[1] + '"/><rect x="20" y="124" width="76" height="46" rx="6" fill="' + c[2] + '" opacity=".12"/><rect x="112" y="124" width="76" height="46" rx="6" fill="' + c[2] + '" opacity=".12"/><rect x="204" y="124" width="76" height="46" rx="6" fill="' + c[1] + '" opacity=".35"/><circle cx="62" cy="76" r="30" fill="' + c[1] + '" opacity=".85"/></svg>'
+            }
+            document.getElementById("name").textContent = NAME;
+            var msg = "أهلًا، شفت أعمالك وعايز موقع لنشاطي.";
+            ["topwa", "ctawa"].forEach(function(i) {
+                var a = document.getElementById(i);
+                a.href = wa(msg);
+                a.target = "_blank";
+                a.rel = "noopener"
+            });
+            var g = document.getElementById("grid");
+            PROJECTS.forEach(function(x) {
+                var c = el("div", "card");
+                c.innerHTML = thumb(x.c);
+                var b = el("div", "cb");
+                b.appendChild(el("h3", "", x.t));
+                b.appendChild(el("p", "", x.d));
+                var tg = el("div", "tags");
+                x.tags.forEach(function(t) {
+                    tg.appendChild(el("span", "", t))
+                });
+                b.appendChild(tg);
+                var a = el("a", "", "شوف النموذج");
+                a.href = x.u;
+                a.target = "_blank";
+                a.rel = "noopener";
+                b.appendChild(a);
+                c.appendChild(b);
+                g.appendChild(c);
+            });
+            var pr = document.getElementById("prices");
+            PRICES.forEach(function(x) {
+                var c = el("div", "pk" + (x.hot ? " hot" : ""));
+                c.appendChild(el("h3", "", x.n));
+                var p = el("div", "p", "ابتداءً من " + x.p);
+                p.appendChild(el("small", "", x.n && " جنيه"));
+                c.appendChild(p);
+                var ul = el("ul");
+                x.f.forEach(function(f) {
+                    ul.appendChild(el("li", "", f))
+                });
+                c.appendChild(ul);
+                pr.appendChild(c);
+            });
+            document.getElementById("foot").textContent = NAME + " – تصميم وبرمجة مواقع";
+        })();
+    </script>
+</body>
+
+</html>

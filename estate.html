@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مسكن العقارية – شقق وفيلات للبيع والإيجار</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#16211b;--muted:#5d6a63;--green:#1f4d3a;--green-ink:#fff;--line:#cfd6d1;--tint:#eef2ef;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1713;--ink:#eaf1ec;--muted:#9fb0a5;--green:#6fc19b;--green-ink:#0b1a12;--line:#2a3a31;--tint:#16231c}}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Tajawal,Tahoma,Arial,sans-serif;line-height:1.7;font-size:17px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.top{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+.logo{font-family:Amiri,serif;font-weight:700;font-size:28px}
+.top a{color:var(--green);font-weight:800;text-decoration:none}
+.hero{padding:48px 0 34px}
+.hero h1{font-family:Amiri,serif;font-weight:700;font-size:clamp(38px,10vw,70px);line-height:1.2;max-width:12em}
+.hero p{color:var(--muted);margin-top:14px;max-width:30em}
+.filters{border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:16px 0;display:grid;gap:14px}
+.lbl{font-weight:800;font-size:15px;margin-bottom:6px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-weight:500;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:5px 16px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--green);color:var(--green-ink);border-color:var(--green)}
+.chip:focus-visible,.go:focus-visible,input:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+input[type=range]{width:100%;accent-color:var(--green)}
+.cnt{color:var(--muted);margin:14px 0 4px;font-size:15px}
+.item{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);align-items:center}
+.ph{aspect-ratio:4/3;background:var(--tint);display:grid;place-items:center}
+.ph svg{width:70%;height:auto}
+.ph img{width:100%;height:100%;object-fit:cover}
+.item h3{font-family:Amiri,serif;font-size:25px;line-height:1.3}
+.meta{color:var(--muted);font-size:15px;margin:2px 0 6px}
+.pr{font-weight:800;font-size:20px;color:var(--green)}
+.pr small{font-weight:400;color:var(--muted);font-size:14px}
+.go{display:inline-block;margin-top:8px;color:var(--ink);font-weight:800;text-decoration:none;border-bottom:2px solid var(--green)}
+.empty{padding:30px 0;color:var(--muted)}
+.why{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;border-top:1px solid var(--ink);padding-top:20px}
+.why b{font-family:Amiri,serif;font-size:21px;display:block}.why span{color:var(--muted);font-size:15px}
+footer{margin-top:50px;border-top:1px solid var(--ink);padding:24px 0 90px;color:var(--muted)}
+footer b{color:var(--ink)}
+.fab{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#04230f;font-weight:800;padding:10px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+@media(max-width:520px){.item{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span class="logo">مسكن العقارية</span><a href="tel:+201000000000">01000000000</a></div>
+  <div class="hero">
+    <h1>بيتك الجاي، بدون لف ودوران</h1>
+    <p>وحدات متراجعة ومعروضة بأسعارها الحقيقية في التجمع ومدينة نصر والشيخ زايد. اختار اللي يناسبك واطلب معاينة.</p>
+  </div>
+
+  <div class="filters">
+    <div><span class="lbl">المنطقة</span><div class="chips" id="areas" role="group" aria-label="المنطقة"></div></div>
+    <div><span class="lbl">النوع</span><div class="chips" id="types" role="group" aria-label="النوع"></div></div>
+    <div><label class="lbl" for="rng">أقصى سعر: <span id="rv"></span></label><input id="rng" type="range" min="1" max="20" step="0.5" value="20"></div>
+  </div>
+  <div class="cnt" id="cnt" aria-live="polite"></div>
+  <div id="list"></div>
+
+  <div class="why">
+    <div><b>أسعار حقيقية</b><span>السعر المكتوب هو سعر الوحدة، بدون مفاجآت.</span></div>
+    <div><b>معاينة في نفس اليوم</b><span>بنرتب معاك ميعاد حسب وقتك.</span></div>
+    <div><b>أوراق سليمة</b><span>بنراجع العقود قبل ما تدفع.</span></div>
+  </div>
+</div>
+<footer><div class="wrap" style="padding:0"><b>مسكن العقارية</b><br>التجمع الخامس، شارع التسعين، برج الأمل، الدور الرابع.<br>من السبت للخميس، 10 صباحًا حتى 8 مساءً.</div></footer>
+<a class="fab" id="fab" href="#">واتساب</a>
+
+<script>
+(function(){
+  var PHONE="201000000000";
+  // صور حقيقية للوحدات: PHOTOS.e1="img/e1.jpg"
+  var PHOTOS={};
+  var L=[
+    {id:"e1",t:"شقة",a:"التجمع الخامس",n:"شقة 165 متر في النرجس",b:3,m:165,p:5.2,k:"للبيع"},
+    {id:"e2",t:"فيلا",a:"الشيخ زايد",n:"فيلا مستقلة في كمبوند",b:5,m:420,p:18,k:"للبيع"},
+    {id:"e3",t:"شقة",a:"مدينة نصر",n:"شقة 130 متر قرب سيتي ستارز",b:3,m:130,p:3.1,k:"للبيع"},
+    {id:"e4",t:"شقة",a:"التجمع الخامس",n:"شقة 110 متر تشطيب سوبر لوكس",b:2,m:110,p:0.022,k:"للإيجار",mo:1},
+    {id:"e5",t:"محل",a:"مدينة نصر",n:"محل 60 متر على شارع رئيسي",b:0,m:60,p:4.5,k:"للبيع"},
+    {id:"e6",t:"شقة",a:"الشيخ زايد",n:"شقة 145 متر دور أرضي بجاردن",b:3,m:145,p:4.4,k:"للبيع"},
+    {id:"e7",t:"فيلا",a:"التجمع الخامس",n:"تاون هاوس 250 متر",b:4,m:250,p:11.5,k:"للبيع"},
+    {id:"e8",t:"محل",a:"التجمع الخامس",n:"محل 45 متر داخل مول",b:0,m:45,p:0.055,k:"للإيجار",mo:1}
+  ];
+  var areas=["الكل","التجمع الخامس","مدينة نصر","الشيخ زايد"],types=["الكل","شقة","فيلا","محل"],A="الكل",T="الكل",MAX=20;
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m)}
+  function bld(t){var s='<svg viewBox="0 0 100 80" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">';
+    if(t==="فيلا")s+='<path d="M10 72V38l40-24 40 24v34zM38 72V52h24v20M20 46h12M68 46h12"/>';
+    else if(t==="محل")s+='<path d="M12 72V30h76v42zM12 30l6-14h64l6 14M24 72V46h24v26M58 46h22v14H58z"/>';
+    else s+='<path d="M24 72V10h52v62zM34 22h10M56 22h10M34 38h10M56 38h10M34 54h10M44 72V62h12v10"/>';
+    return s+'</svg>'}
+  function price(x){if(x.mo)return Math.round(x.p*1000)+" ألف جنيه";return (x.p%1===0?x.p:x.p)+" مليون جنيه"}
+  function chips(id,list,get,set){var box=document.getElementById(id);
+    list.forEach(function(v){var b=el("button","chip",v);b.type="button";b.setAttribute("aria-pressed",v===get());
+      b.onclick=function(){set(v);[].forEach.call(box.children,function(k){k.setAttribute("aria-pressed",k===b)});render()};box.appendChild(b)})}
+  chips("areas",areas,function(){return A},function(v){A=v});
+  chips("types",types,function(){return T},function(v){T=v});
+  var rng=document.getElementById("rng"),rv=document.getElementById("rv");
+  function rl(){rv.textContent=MAX>=20?"بدون حد":MAX+" مليون"}
+  rng.oninput=function(){MAX=parseFloat(this.value);rl();render()};rl();
+  function render(){
+    var box=document.getElementById("list");box.innerHTML="";
+    var r=L.filter(function(x){return (A==="الكل"||x.a===A)&&(T==="الكل"||x.t===T)&&(MAX>=20||x.mo||x.p<=MAX)});
+    document.getElementById("cnt").textContent=r.length+" وحدة متاحة";
+    if(!r.length){box.appendChild(el("div","empty","مفيش وحدات بالمواصفات دي حاليًا. ابعتلنا على واتساب وهندوّرلك."));return}
+    r.forEach(function(x){
+      var it=el("div","item"),ph=el("div","ph");
+      if(PHOTOS[x.id]){var im=document.createElement("img");im.src=PHOTOS[x.id];im.alt=x.n;ph.appendChild(im)}else ph.innerHTML=bld(x.t);
+      var d=el("div");d.appendChild(el("h3","",x.n));
+      d.appendChild(el("div","meta",x.a+" | "+x.k+" | "+x.m+" م²"+(x.b?" | "+x.b+" غرف":"")));
+      var p=el("div","pr",price(x));if(x.mo)p.appendChild(el("small","",x.t==="محل"?" شهريًا":" شهريًا"));d.appendChild(p);
+      var a=el("a","go","اطلب معاينة");a.href=wa("أهلًا، عايز أعاين: "+x.n+" ("+x.a+" - "+x.k+").");d.appendChild(a);
+      it.appendChild(ph);it.appendChild(d);box.appendChild(it);
+    });
+  }
+  render();
+  document.getElementById("fab").href=wa("أهلًا، عايز أستفسر عن وحدات متاحة.");
+})();
+</script>
+</body>
+</html>
